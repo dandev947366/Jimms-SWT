@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.10.12 on darwin)" generated="2024-09-21T12:21:58.122667" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Add Cart Link" source="/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/cart/test_add_cart_link.robot">
+<test id="s1-t1" name="Verify All Product Categories Have Landing Pages And Add To Cart Button" line="18">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:21:58.653727" level="INFO">Creating Session using : alias=jimms, url=https://www.jimms.fi/fi/Product/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>jimms</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-09-21T12:21:58.653583" elapsed="0.000280"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:21:58.654188" level="INFO">Opening browser 'Chrome' to base url 'https://www.jimms.fi/fi/Product/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:21:58.654026" elapsed="11.207725"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:22:09.862674" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tietokoneet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:22:09.862503" elapsed="0.000191"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:09.862877" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tietokoneet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:22:09.862780" elapsed="1.435390"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:22:13.299680" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:22:11.298344" elapsed="2.001963"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:13.334254" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
+<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:22:13.301279" elapsed="0.033109"/>
+</kw>
+<var name="${category}">Tietokoneet</var>
+<status status="PASS" start="2024-09-21T12:22:09.862330" elapsed="3.472184"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:22:13.335131" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Komponentit</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:22:13.334883" elapsed="0.000271"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:13.335366" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Komponentit'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:22:13.335255" elapsed="0.850610"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:22:16.187079" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:22:14.186003" elapsed="2.001188"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:16.198022" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
+<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:22:16.187350" elapsed="0.010749"/>
+</kw>
+<var name="${category}">Komponentit</var>
+<status status="PASS" start="2024-09-21T12:22:13.334723" elapsed="2.863437"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:22:16.198511" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Oheislaitteet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:22:16.198360" elapsed="0.000168"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:16.198680" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Oheislaitteet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:22:16.198600" elapsed="0.725513"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:22:18.924626" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:22:16.924269" elapsed="2.000479"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:18.941347" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
+<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:22:18.924951" elapsed="0.016504"/>
+</kw>
+<var name="${category}">Oheislaitteet</var>
+<status status="PASS" start="2024-09-21T12:22:16.198275" elapsed="2.743271"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:22:18.942098" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/SimRacing</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:22:18.941856" elapsed="0.000270"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:18.942393" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/SimRacing'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:22:18.942247" elapsed="0.982792"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:22:21.926637" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:22:19.925212" elapsed="2.001519"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:21.936793" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
+<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:22:21.926874" elapsed="0.009997"/>
+</kw>
+<var name="${category}">SimRacing</var>
+<status status="PASS" start="2024-09-21T12:22:18.941727" elapsed="2.995205"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:22:21.937432" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Verkkotuotteet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:22:21.937273" elapsed="0.000176"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:21.937652" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Verkkotuotteet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:22:21.937543" elapsed="1.310848"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:22:25.249564" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:22:23.248595" elapsed="2.001624"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:25.271665" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
+<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:22:25.251061" elapsed="0.020783"/>
+</kw>
+<var name="${category}">Verkkotuotteet</var>
+<status status="PASS" start="2024-09-21T12:22:21.937185" elapsed="3.334791"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:22:25.272736" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tarvikkeet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:22:25.272396" elapsed="0.000371"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:25.273100" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tarvikkeet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:22:25.272937" elapsed="2.968941"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:22:30.245241" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:22:28.242114" elapsed="2.003743"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:30.271785" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
+<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:22:30.246797" elapsed="0.025173"/>
+</kw>
+<var name="${category}">Tarvikkeet</var>
+<status status="PASS" start="2024-09-21T12:22:25.272207" elapsed="4.999911"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:22:30.272890" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Erikoistuotteet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:22:30.272581" elapsed="0.000338"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:30.273214" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Erikoistuotteet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:22:30.273060" elapsed="0.749847"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:22:33.023738" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:22:31.023051" elapsed="2.000777"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:33.033097" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
+<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:22:33.023968" elapsed="0.009192"/>
+</kw>
+<var name="${category}">Erikoistuotteet</var>
+<status status="PASS" start="2024-09-21T12:22:30.272380" elapsed="2.760832"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:22:33.033512" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Ohjelmistot</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:22:33.033381" elapsed="0.000147"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:33.033747" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Ohjelmistot'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:22:33.033595" elapsed="1.346972"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:22:36.382882" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:22:34.380804" elapsed="2.002325"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:22:36.398824" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
+<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:22:36.383490" elapsed="0.015424"/>
+</kw>
+<var name="${category}">Ohjelmistot</var>
+<status status="PASS" start="2024-09-21T12:22:33.033308" elapsed="3.365673"/>
+</iter>
+<var>${category}</var>
+<value>@{CATEGORIES}</value>
+<status status="PASS" start="2024-09-21T12:22:09.862055" elapsed="26.536966"/>
+</for>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-21T12:22:36.399216" elapsed="0.122295"/>
+</kw>
+<doc>This test case verifies that all product categories return a valid landing page and contain the addto-cart-wrapper.</doc>
+<status status="PASS" start="2024-09-21T12:21:58.652695" elapsed="37.869005"/>
+</test>
+<status status="PASS" start="2024-09-21T12:21:58.123835" elapsed="38.398161"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Add Cart Link">Test Add Cart Link</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

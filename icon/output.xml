@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.10.12 on darwin)" generated="2024-09-21T12:23:33.478794" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Cart Icon" source="/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/icon/test_cart_icon.robot">
+<test id="s1-t1" name="Verify All Product Categories Have Landing Pages And Add To Cart Button And Icon" line="16">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:23:34.016867" level="INFO">Creating Session using : alias=jimms, url=https://www.jimms.fi/fi/Product/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>jimms</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-09-21T12:23:34.016714" elapsed="0.000295"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:34.017350" level="INFO">Opening browser 'Chrome' to base url 'https://www.jimms.fi/fi/Product/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:23:34.017177" elapsed="12.538970"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:23:46.557233" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tietokoneet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:23:46.557031" elapsed="0.000225"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:46.557454" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tietokoneet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:23:46.557349" elapsed="2.167809"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:48.750512" level="INFO">Element 'xpath=//*[@class='addto-cart-wrapper']' is displayed.</msg>
+<arg>xpath=//*[@class='addto-cart-wrapper']</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:23:48.725419" elapsed="0.025175"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:48.765945" level="INFO">Element 'xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']' is displayed.</msg>
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<arg>msg="Lisää koriin" button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:23:48.750743" elapsed="0.015285"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-21T12:23:48.766182" elapsed="0.266851"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:49.041125" level="INFO">${icon_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.92F8D12D50D53DB39F674E3E7A358051.e.113")&gt;</msg>
+<var>${icon_element}</var>
+<arg>xpath=//*[@class='material-icon me-1']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-09-21T12:23:49.033203" elapsed="0.007954"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:49.044892" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.92F8D12D50D53DB39F674E3E7A358051.e.113")&gt;' is displayed.</msg>
+<arg>${icon_element}</arg>
+<arg>msg=Icon for "Lisää koriin" not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:23:49.041274" elapsed="0.003671"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:49.079230" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="icon_screenshot_Tietokoneet.png"&gt;&lt;img src="icon_screenshot_Tietokoneet.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${icon_element}</arg>
+<arg>icon_screenshot_${category}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-09-21T12:23:49.045055" elapsed="0.034255"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:23:51.081971" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:23:49.079439" elapsed="2.002754"/>
+</kw>
+<var name="${category}">Tietokoneet</var>
+<status status="PASS" start="2024-09-21T12:23:46.556855" elapsed="4.525476"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:23:51.083132" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Komponentit</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:23:51.082814" elapsed="0.000348"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:51.083451" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Komponentit'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:23:51.083292" elapsed="2.168350"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:53.266369" level="INFO">Element 'xpath=//*[@class='addto-cart-wrapper']' is displayed.</msg>
+<arg>xpath=//*[@class='addto-cart-wrapper']</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:23:53.251792" elapsed="0.014679"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:53.277137" level="INFO">Element 'xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']' is displayed.</msg>
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<arg>msg="Lisää koriin" button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:23:53.266656" elapsed="0.010564"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-21T12:23:53.277368" elapsed="0.276711"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:53.560556" level="INFO">${icon_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.1AE465A65B58BD10F178A3A46B0C3156.e.180")&gt;</msg>
+<var>${icon_element}</var>
+<arg>xpath=//*[@class='material-icon me-1']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-09-21T12:23:53.554244" elapsed="0.006343"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:53.564435" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.1AE465A65B58BD10F178A3A46B0C3156.e.180")&gt;' is displayed.</msg>
+<arg>${icon_element}</arg>
+<arg>msg=Icon for "Lisää koriin" not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:23:53.560705" elapsed="0.003950"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:53.593976" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="icon_screenshot_Komponentit.png"&gt;&lt;img src="icon_screenshot_Komponentit.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${icon_element}</arg>
+<arg>icon_screenshot_${category}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-09-21T12:23:53.564768" elapsed="0.029300"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:23:55.596378" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:23:53.594198" elapsed="2.002304"/>
+</kw>
+<var name="${category}">Komponentit</var>
+<status status="PASS" start="2024-09-21T12:23:51.082617" elapsed="4.513963"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:23:55.597138" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Oheislaitteet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:23:55.596920" elapsed="0.000243"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:55.597379" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Oheislaitteet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:23:55.597265" elapsed="2.520157"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:58.134636" level="INFO">Element 'xpath=//*[@class='addto-cart-wrapper']' is displayed.</msg>
+<arg>xpath=//*[@class='addto-cart-wrapper']</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:23:58.117629" elapsed="0.017091"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:58.145597" level="INFO">Element 'xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']' is displayed.</msg>
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<arg>msg="Lisää koriin" button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:23:58.134888" elapsed="0.010788"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-21T12:23:58.145814" elapsed="0.272540"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:58.424978" level="INFO">${icon_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.337AC126BA8832DF7DFB81C053263D61.e.251")&gt;</msg>
+<var>${icon_element}</var>
+<arg>xpath=//*[@class='material-icon me-1']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-09-21T12:23:58.418515" elapsed="0.006497"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:58.428815" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.337AC126BA8832DF7DFB81C053263D61.e.251")&gt;' is displayed.</msg>
+<arg>${icon_element}</arg>
+<arg>msg=Icon for "Lisää koriin" not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:23:58.425123" elapsed="0.003747"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:23:58.465852" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="icon_screenshot_Oheislaitteet.png"&gt;&lt;img src="icon_screenshot_Oheislaitteet.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${icon_element}</arg>
+<arg>icon_screenshot_${category}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-09-21T12:23:58.428971" elapsed="0.036967"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:24:00.466763" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:23:58.466073" elapsed="2.000783"/>
+</kw>
+<var name="${category}">Oheislaitteet</var>
+<status status="PASS" start="2024-09-21T12:23:55.596765" elapsed="4.870144"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:24:00.467342" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/SimRacing</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:24:00.467117" elapsed="0.000243"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:00.467524" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/SimRacing'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:24:00.467437" elapsed="3.386825"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:03.868260" level="INFO">Element 'xpath=//*[@class='addto-cart-wrapper']' is displayed.</msg>
+<arg>xpath=//*[@class='addto-cart-wrapper']</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:03.854515" elapsed="0.013830"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:03.878772" level="INFO">Element 'xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']' is displayed.</msg>
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<arg>msg="Lisää koriin" button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:03.868496" elapsed="0.010352"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-21T12:24:03.878982" elapsed="0.274054"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:04.163206" level="INFO">${icon_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.277C20803295E8640E8926348BE2893F.e.327")&gt;</msg>
+<var>${icon_element}</var>
+<arg>xpath=//*[@class='material-icon me-1']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-09-21T12:24:04.153243" elapsed="0.010013"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:04.168973" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.277C20803295E8640E8926348BE2893F.e.327")&gt;' is displayed.</msg>
+<arg>${icon_element}</arg>
+<arg>msg=Icon for "Lisää koriin" not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:04.163408" elapsed="0.005653"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:04.200911" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="icon_screenshot_SimRacing.png"&gt;&lt;img src="icon_screenshot_SimRacing.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${icon_element}</arg>
+<arg>icon_screenshot_${category}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-09-21T12:24:04.169216" elapsed="0.031781"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:24:06.203639" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:24:04.201131" elapsed="2.002667"/>
+</kw>
+<var name="${category}">SimRacing</var>
+<status status="PASS" start="2024-09-21T12:24:00.467035" elapsed="5.736862"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:24:06.204523" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Verkkotuotteet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:24:06.204263" elapsed="0.000288"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:06.204810" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Verkkotuotteet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:24:06.204666" elapsed="4.692561"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:10.908597" level="INFO">Element 'xpath=//*[@class='addto-cart-wrapper']' is displayed.</msg>
+<arg>xpath=//*[@class='addto-cart-wrapper']</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:10.897386" elapsed="0.011297"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:10.919733" level="INFO">Element 'xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']' is displayed.</msg>
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<arg>msg="Lisää koriin" button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:10.908822" elapsed="0.010996"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-21T12:24:10.919964" elapsed="0.272254"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:11.198107" level="INFO">${icon_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.7E30853B8B5D65C5ABBAC65D40A22249.e.389")&gt;</msg>
+<var>${icon_element}</var>
+<arg>xpath=//*[@class='material-icon me-1']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-09-21T12:24:11.192377" elapsed="0.005762"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:11.201942" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.7E30853B8B5D65C5ABBAC65D40A22249.e.389")&gt;' is displayed.</msg>
+<arg>${icon_element}</arg>
+<arg>msg=Icon for "Lisää koriin" not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:11.198259" elapsed="0.003737"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:11.234720" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="icon_screenshot_Verkkotuotteet.png"&gt;&lt;img src="icon_screenshot_Verkkotuotteet.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${icon_element}</arg>
+<arg>icon_screenshot_${category}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-09-21T12:24:11.202097" elapsed="0.032702"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:24:13.236544" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:24:11.234925" elapsed="2.001718"/>
+</kw>
+<var name="${category}">Verkkotuotteet</var>
+<status status="PASS" start="2024-09-21T12:24:06.204114" elapsed="7.032592"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:24:13.237120" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tarvikkeet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:24:13.236949" elapsed="0.000191"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:13.237320" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tarvikkeet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:24:13.237224" elapsed="8.722281"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:21.971980" level="INFO">Element 'xpath=//*[@class='addto-cart-wrapper']' is displayed.</msg>
+<arg>xpath=//*[@class='addto-cart-wrapper']</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:21.959733" elapsed="0.012315"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:21.985256" level="INFO">Element 'xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']' is displayed.</msg>
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<arg>msg="Lisää koriin" button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:21.972168" elapsed="0.013199"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-21T12:24:21.985513" elapsed="0.276160"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:22.267796" level="INFO">${icon_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.F942548CCA5502CF93850F2D0284CBA0.e.460")&gt;</msg>
+<var>${icon_element}</var>
+<arg>xpath=//*[@class='material-icon me-1']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-09-21T12:24:22.261828" elapsed="0.006004"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:22.272757" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.F942548CCA5502CF93850F2D0284CBA0.e.460")&gt;' is displayed.</msg>
+<arg>${icon_element}</arg>
+<arg>msg=Icon for "Lisää koriin" not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:22.269001" elapsed="0.003813"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:22.301033" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="icon_screenshot_Tarvikkeet.png"&gt;&lt;img src="icon_screenshot_Tarvikkeet.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${icon_element}</arg>
+<arg>icon_screenshot_${category}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-09-21T12:24:22.272921" elapsed="0.028207"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:24:24.301436" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:24:22.301262" elapsed="2.000269"/>
+</kw>
+<var name="${category}">Tarvikkeet</var>
+<status status="PASS" start="2024-09-21T12:24:13.236855" elapsed="11.064737"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:24:24.302010" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Erikoistuotteet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:24:24.301841" elapsed="0.000188"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:24.302199" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Erikoistuotteet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:24:24.302108" elapsed="8.644191"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:32.959716" level="INFO">Element 'xpath=//*[@class='addto-cart-wrapper']' is displayed.</msg>
+<arg>xpath=//*[@class='addto-cart-wrapper']</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:32.946458" elapsed="0.013340"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:32.969848" level="INFO">Element 'xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']' is displayed.</msg>
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<arg>msg="Lisää koriin" button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:32.959945" elapsed="0.009983"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-21T12:24:32.970062" elapsed="0.269639"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:33.245793" level="INFO">${icon_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.0665F79DF480DF13A5C666DBC8B760F1.e.534")&gt;</msg>
+<var>${icon_element}</var>
+<arg>xpath=//*[@class='material-icon me-1']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-09-21T12:24:33.239868" elapsed="0.005956"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:33.249909" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.0665F79DF480DF13A5C666DBC8B760F1.e.534")&gt;' is displayed.</msg>
+<arg>${icon_element}</arg>
+<arg>msg=Icon for "Lisää koriin" not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:33.245951" elapsed="0.004043"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:33.280717" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="icon_screenshot_Erikoistuotteet.png"&gt;&lt;img src="icon_screenshot_Erikoistuotteet.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${icon_element}</arg>
+<arg>icon_screenshot_${category}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-09-21T12:24:33.250115" elapsed="0.030689"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:24:35.281243" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:24:33.280936" elapsed="2.000583"/>
+</kw>
+<var name="${category}">Erikoistuotteet</var>
+<status status="PASS" start="2024-09-21T12:24:24.301740" elapsed="10.979951"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:24:35.282789" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Ohjelmistot</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:24:35.282337" elapsed="0.000499"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:35.283285" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Ohjelmistot'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:24:35.283043" elapsed="7.537324"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:42.830838" level="INFO">Element 'xpath=//*[@class='addto-cart-wrapper']' is displayed.</msg>
+<arg>xpath=//*[@class='addto-cart-wrapper']</arg>
+<arg>msg=Add to cart button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:42.820516" elapsed="0.010398"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:42.840345" level="INFO">Element 'xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']' is displayed.</msg>
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<arg>msg="Lisää koriin" button not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:42.831056" elapsed="0.009367"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//*[@class='btn btn-success btn-icon js-cart-btn' and @title='Lisää koriin']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-09-21T12:24:42.840555" elapsed="0.268325"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:43.114886" level="INFO">${icon_element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.37A1EC3353B63C461B6E0EBA04C4E104.e.601")&gt;</msg>
+<var>${icon_element}</var>
+<arg>xpath=//*[@class='material-icon me-1']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-09-21T12:24:43.109031" elapsed="0.005890"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:43.119013" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="951f88bdc500180d1d856b636a3760dc", element="f.F910D6F2F81BCC3059EFFFC39021F19C.d.37A1EC3353B63C461B6E0EBA04C4E104.e.601")&gt;' is displayed.</msg>
+<arg>${icon_element}</arg>
+<arg>msg=Icon for "Lisää koriin" not found for ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-21T12:24:43.115421" elapsed="0.003648"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:24:43.150548" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="icon_screenshot_Ohjelmistot.png"&gt;&lt;img src="icon_screenshot_Ohjelmistot.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${icon_element}</arg>
+<arg>icon_screenshot_${category}.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-09-21T12:24:43.119172" elapsed="0.031468"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:24:45.152996" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:24:43.150779" elapsed="2.002445"/>
+</kw>
+<var name="${category}">Ohjelmistot</var>
+<status status="PASS" start="2024-09-21T12:24:35.282070" elapsed="9.871287"/>
+</iter>
+<var>${category}</var>
+<value>@{CATEGORIES}</value>
+<status status="PASS" start="2024-09-21T12:23:46.556468" elapsed="58.596968"/>
+</for>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-21T12:24:45.153794" elapsed="0.120081"/>
+</kw>
+<doc>This test case verifies that all product categories return a valid landing page and contain the addto-cart-wrapper and its icon.</doc>
+<status status="PASS" start="2024-09-21T12:23:34.015747" elapsed="71.258326"/>
+</test>
+<status status="PASS" start="2024-09-21T12:23:33.479973" elapsed="71.794430"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Cart Icon">Test Cart Icon</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,2256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.10.12 on darwin)" generated="2024-09-21T12:18:39.187732" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Categories" source="/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/test_categories.robot">
+<test id="s1-t1" name="Verify All Product Categories Have Landing Pages" line="16">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:18:39.673082" level="INFO">Creating Session using : alias=jimms, url=https://www.jimms.fi/fi/Product/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>jimms</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-09-21T12:18:39.672969" elapsed="0.000245"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:18:39.673453" level="INFO">Opening browser 'Chrome' to base url 'https://www.jimms.fi/fi/Product/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:18:39.673334" elapsed="11.499143"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:18:51.173632" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tietokoneet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:18:51.173418" elapsed="0.000237"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:18:51.173861" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tietokoneet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:18:51.173756" elapsed="1.972076"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:20:11.722934" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Tietokoneet 
+ path_url=/fi/Product/Tietokoneet 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-09-21T12:20:11.723467" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Tietokoneet 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 21 Sep 2024 09:20:11 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'set-cookie': 'JW.CurrentUICulture=fi; expires=Thu, 21-Sep-2034 09:20:11 GMT; path=/; HttpOnly', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ZvcE%2B20P8UnV4P%2BT5kJhRE5hvx%2BiAh3xerKUIwDwWEfpQxp0NYYPTVlTV2LohhQ6mVpawh%2Bc04f43dzgLWAFVBBhpEgFykNE2%2FdGwyYRTimgSrQiY0SGrSD1Njh6AA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c68fa58add28d7b-HEL', 'Content-Encoding': 'gzip'} 
+ body=
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fi"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; utf-8" /&gt;
+    &lt;meta http-equiv="Content-language" content="fi" /&gt;
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2, user-scalable=yes, viewport-fit=auto"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    &lt;meta name="format-detection" content="telephone=no" /&gt;
+    &lt;meta http-equiv="cache-control" content="max-age=0" /&gt;
+    &lt;meta http-equiv="cache-control" content="no-cache" /&gt;
+    &lt;meta http-equiv="expires" content="0" /&gt;
+    &lt;meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" /&gt;
+    &lt;meta http-equiv="pragma" content="no-cache" /&gt;
+
+    &lt;meta property="og:title" content="Tietokoneet - Jimms.fi"&gt;
+&lt;meta property="og:url" content="https://www.jimms.fi/fi/Product/Tietokoneet"&gt;
+&lt;meta property="og:image" content="http://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:secure_url" content="https://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:type" content="image/jpeg"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:description" content="Valikoimastamme l&amp;#246;yd&amp;#228;t pelikoneet, p&amp;#246;yt&amp;#228;koneet, kannettavat sek&amp;#228; tabletit jokaiseen makuun. Ja nettitilauksiin ilmaiset postikulut!"&gt;
+&lt;meta property="og:site_name" content="Jimms.fi"&gt;
+&lt;meta property="fb:app_id" content="297181540295864"&gt;
+&lt;meta name="description" content="Valikoimastamme l&amp;#246;yd&amp;#228;t pelikoneet, p&amp;#246;yt&amp;#228;koneet, kannettavat sek&amp;#228; tabletit jokaiseen makuun. Ja nettitilauksiin ilmaiset postikulut!" /&gt;
+
+    
+
+	&lt;meta name="application-name" content="Jimms.fi"&gt;
+	&lt;meta name="msapplication-TileColor" content="#333333"/&gt;
+	&lt;meta name="msapplication-TileImage" content="/Content/SiteIcons/mstile-144x144.png"/&gt;
+	&lt;meta name="theme-color" content="#bb3300"/&gt;
+
+	&lt;link rel="apple-touch-icon" sizes="57x57" href="/Content/SiteIcons/apple-touch-icon-57x57.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="60x60" href="/Content/SiteIcons/apple-touch-icon-60x60.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="72x72" href="/Content/SiteIcons/apple-touch-icon-72x72.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="76x76" href="/Content/SiteIcons/apple-touch-icon-76x76.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="114x114" href="/Content/SiteIcons/apple-touch-icon-114x114.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="120x120" href="/Content/SiteIcons/apple-touch-icon-120x120.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="144x144" href="/Content/SiteIcons/apple-touch-icon-144x144.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="152x152" href="/Content/SiteIcons/apple-touch-icon-152x152.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="180x180" href="/Content/SiteIcons/apple-touch-icon-180x180.png"/&gt;
+	
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-32x32.png" sizes="32x32"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/android-chrome-192x192.png" sizes="192x192"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-96x96.png" sizes="96x96"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-16x16.png" sizes="16x16"/&gt;
+	
+	&lt;link rel="manifest" href="/manifest.json?v4"/&gt;
+
+	
+
+    &lt;title&gt;Tietokoneet - Jimms.fi&lt;/title&gt;
+
+    
+    &lt;link rel="preload" href="/Content/fonts/opensans.woff2" as="font" type="font/woff2" crossorigin&gt;
+    &lt;link rel="preload" href="/Content/fonts/material-icons-round.woff2" as="font" type="font/woff2" crossorigin&gt;
+    
+    &lt;link async rel="stylesheet" type="text/css" href="/Content/libs.min.css?v=fl_8" /&gt;
+    &lt;link defer rel="stylesheet" type="text/css" href="/Content/jimms.min.css?v=fl_45" /&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        var languageCode = "fi";
+
+        window.defaultTheme = 'auto';
+        
+
+    &lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/app.bundle.js?v=fl_6"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/jimmsfi.min.js?v=fl_45"&gt;&lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        viewModel.ShoppingCart = new jimmsfi.ShoppingCartViewModel(true, 0, 0);
+        
+
+        window.DY = window.DY || {};
+        DY.userActiveConsent = { accepted: false }
+        DY.recommendationContext = {
+            type: 'CATEGORY', 
+            data: ['Tietokoneet'],
+            lng: 'fi_FI'
+        };
+    &lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {'functionality_storage':'granted','security_storage':'granted','analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied',wait_for_update: 100}); 
+
+        dataLayer.push({'event': 'page_information', 'pageType': 'category'});
+        dataLayer.push({'event': 'page_Theme','pageTheme': window.currentTheme});
+
+        window.gtm_consent = {'analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied'};
+        gtag('set', 'ads_data_redaction', true);
+    &lt;/script&gt;
+
+    &lt;script type="text/javascript" src="/Scripts/ui.bundle.js?v=fl_8"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/elements.min.js?v=fl_25"&gt;&lt;/script&gt;
+
+    
+    
+ 
+
+	&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTKJJ5');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+
+
+    
+
+
+
+
+
+
+ 
+    
+
+
+
+    &lt;link rel="preconnect" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//rcom-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//rcom-eu.dynamicyield.com"&gt;
+
+
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_dynamic.js"&gt;&lt;/script&gt;
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_static.js"&gt;&lt;/script&gt; 
+
+
+    
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTKJJ5"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    
+
+    &lt;div class="jim-toplinkbar"&gt;
+    &lt;div class="container"&gt;
+
+        &lt;a href="https://blog.jimms.fi" target=_blank&gt;Blogi&lt;/a&gt;
+        &lt;a href="/fi/Info/Faq"&gt;UKK&lt;/a&gt;
+        &lt;a href="/fi/Pages/B2B"&gt;Yritysmyynti&lt;/a&gt;
+        &lt;a href="/fi/Info/Contact"&gt;Yhteystiedot&lt;/a&gt;
+
+        &lt;div class="separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle btn-icon" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                &lt;i class="material-icon theme-icon-active"&gt;dark_mode&lt;/i&gt;
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100; --bs-dropdown-min-width: 12rem;"&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light"&gt;&lt;i class="material-icon theme-icon"&gt;light_mode&lt;/i&gt; Vaalea &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark"&gt;&lt;i class="material-icon"&gt;dark_mode&lt;/i&gt; Tumma &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto"&gt;&lt;i class="material-icon"&gt;brightness_medium&lt;/i&gt; Automaattinen &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;jim-store-language class="jim-store-language separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle text-uppercase" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                fi
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100"&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="/fi/Home/ChangeCurrentCulture?newlang=fi"&gt;&lt;div class="flag-fi img-fluid border-radius-circle d-inline-block me-2" style="width: 1rem; height: 1rem"&gt;&lt;/div&gt; Suomi&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/jim-store-language&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const showActiveTheme = theme =&gt; {
+        const activeThemeIcon = document.querySelector('i.theme-icon-active');
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+        document.querySelectorAll('[data-bs-theme-value] &gt; i.theme-active-check').forEach(element =&gt; {
+            if (element.parentNode == btnToActive) {
+                element.classList.remove('d-none');
+                activeThemeIcon.innerHTML = btnToActive.childNodes[0].innerHTML;
+            }
+            else {
+                element.classList.add('d-none');
+            }
+        });
+    }
+    showActiveTheme(getPreferredTheme());
+   
+    window.addEventListener('DOMContentLoaded', () =&gt; {
+        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle =&gt; {
+            toggle.addEventListener('click', () =&gt; {
+                const... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-09-21T12:20:11.723767" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-09-21T12:20:11.723903" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>jimms</arg>
+<arg>${category}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-09-21T12:18:53.146034" elapsed="78.577895"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-09-21T12:20:11.724871" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-09-21T12:20:11.724308" elapsed="0.000618"/>
+</kw>
+<arg>Should Be Equal As Numbers</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-09-21T12:20:11.724131" elapsed="0.000858"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:11.944830" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Tietokoneet_landing_page.png"&gt;&lt;img src="Tietokoneet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${category}_landing_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-21T12:20:11.725093" elapsed="0.219820"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:20:13.946850" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:20:11.945042" elapsed="2.002026"/>
+</kw>
+<var name="${category}">Tietokoneet</var>
+<status status="PASS" start="2024-09-21T12:18:51.173220" elapsed="82.773978"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:20:13.947959" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Komponentit</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:20:13.947662" elapsed="0.000323"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:13.948241" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Komponentit'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:20:13.948100" elapsed="3.135094"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:20:17.261471" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Komponentit 
+ path_url=/fi/Product/Komponentit 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
+ body=None 
+ </msg>
+<msg time="2024-09-21T12:20:17.261860" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Komponentit 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 21 Sep 2024 09:20:17 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=yilc7gne8zuRLRBE4gxHLoO8G9P2d6oUhdr%2FKa5l2yRxgXOm2H%2Fy9EvWrFccZfojZvV7dECQvULsOUunUktXyFZ3gx1mgroQzjW68CYQkfjP%2FMEUfLRId9jB0cMHIg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c68fa7b59b78d7b-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fi"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; utf-8" /&gt;
+    &lt;meta http-equiv="Content-language" content="fi" /&gt;
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2, user-scalable=yes, viewport-fit=auto"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    &lt;meta name="format-detection" content="telephone=no" /&gt;
+    &lt;meta http-equiv="cache-control" content="max-age=0" /&gt;
+    &lt;meta http-equiv="cache-control" content="no-cache" /&gt;
+    &lt;meta http-equiv="expires" content="0" /&gt;
+    &lt;meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" /&gt;
+    &lt;meta http-equiv="pragma" content="no-cache" /&gt;
+
+    &lt;meta property="og:title" content="Komponentit - Jimms.fi"&gt;
+&lt;meta property="og:url" content="https://www.jimms.fi/fi/Product/Komponentit"&gt;
+&lt;meta property="og:image" content="http://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:secure_url" content="https://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:type" content="image/jpeg"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:description" content="Suomen kattavin valikoima komponentteja peruskoneen tai tehokkaan peli- ja ty&amp;#246;tietokoneen rakentamoiseen. Ja nettitilauksiin ilmaiset postikulut!"&gt;
+&lt;meta property="og:site_name" content="Jimms.fi"&gt;
+&lt;meta property="fb:app_id" content="297181540295864"&gt;
+&lt;meta name="description" content="Suomen kattavin valikoima komponentteja peruskoneen tai tehokkaan peli- ja ty&amp;#246;tietokoneen rakentamoiseen. Ja nettitilauksiin ilmaiset postikulut!" /&gt;
+
+    
+
+	&lt;meta name="application-name" content="Jimms.fi"&gt;
+	&lt;meta name="msapplication-TileColor" content="#333333"/&gt;
+	&lt;meta name="msapplication-TileImage" content="/Content/SiteIcons/mstile-144x144.png"/&gt;
+	&lt;meta name="theme-color" content="#bb3300"/&gt;
+
+	&lt;link rel="apple-touch-icon" sizes="57x57" href="/Content/SiteIcons/apple-touch-icon-57x57.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="60x60" href="/Content/SiteIcons/apple-touch-icon-60x60.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="72x72" href="/Content/SiteIcons/apple-touch-icon-72x72.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="76x76" href="/Content/SiteIcons/apple-touch-icon-76x76.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="114x114" href="/Content/SiteIcons/apple-touch-icon-114x114.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="120x120" href="/Content/SiteIcons/apple-touch-icon-120x120.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="144x144" href="/Content/SiteIcons/apple-touch-icon-144x144.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="152x152" href="/Content/SiteIcons/apple-touch-icon-152x152.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="180x180" href="/Content/SiteIcons/apple-touch-icon-180x180.png"/&gt;
+	
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-32x32.png" sizes="32x32"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/android-chrome-192x192.png" sizes="192x192"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-96x96.png" sizes="96x96"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-16x16.png" sizes="16x16"/&gt;
+	
+	&lt;link rel="manifest" href="/manifest.json?v4"/&gt;
+
+	
+
+    &lt;title&gt;Komponentit - Jimms.fi&lt;/title&gt;
+
+    
+    &lt;link rel="preload" href="/Content/fonts/opensans.woff2" as="font" type="font/woff2" crossorigin&gt;
+    &lt;link rel="preload" href="/Content/fonts/material-icons-round.woff2" as="font" type="font/woff2" crossorigin&gt;
+    
+    &lt;link async rel="stylesheet" type="text/css" href="/Content/libs.min.css?v=fl_8" /&gt;
+    &lt;link defer rel="stylesheet" type="text/css" href="/Content/jimms.min.css?v=fl_45" /&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        var languageCode = "fi";
+
+        window.defaultTheme = 'auto';
+        
+
+    &lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/app.bundle.js?v=fl_6"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/jimmsfi.min.js?v=fl_45"&gt;&lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        viewModel.ShoppingCart = new jimmsfi.ShoppingCartViewModel(true, 0, 0);
+        
+
+        window.DY = window.DY || {};
+        DY.userActiveConsent = { accepted: false }
+        DY.recommendationContext = {
+            type: 'CATEGORY', 
+            data: ['Komponentit'],
+            lng: 'fi_FI'
+        };
+    &lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {'functionality_storage':'granted','security_storage':'granted','analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied',wait_for_update: 100}); 
+
+        dataLayer.push({'event': 'page_information', 'pageType': 'category'});
+        dataLayer.push({'event': 'page_Theme','pageTheme': window.currentTheme});
+
+        window.gtm_consent = {'analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied'};
+        gtag('set', 'ads_data_redaction', true);
+    &lt;/script&gt;
+
+    &lt;script type="text/javascript" src="/Scripts/ui.bundle.js?v=fl_8"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/elements.min.js?v=fl_25"&gt;&lt;/script&gt;
+
+    
+    
+ 
+
+	&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTKJJ5');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+
+
+    
+
+
+
+
+
+
+ 
+    
+
+
+
+    &lt;link rel="preconnect" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//rcom-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//rcom-eu.dynamicyield.com"&gt;
+
+
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_dynamic.js"&gt;&lt;/script&gt;
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_static.js"&gt;&lt;/script&gt; 
+
+
+    
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTKJJ5"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    
+
+    &lt;div class="jim-toplinkbar"&gt;
+    &lt;div class="container"&gt;
+
+        &lt;a href="https://blog.jimms.fi" target=_blank&gt;Blogi&lt;/a&gt;
+        &lt;a href="/fi/Info/Faq"&gt;UKK&lt;/a&gt;
+        &lt;a href="/fi/Pages/B2B"&gt;Yritysmyynti&lt;/a&gt;
+        &lt;a href="/fi/Info/Contact"&gt;Yhteystiedot&lt;/a&gt;
+
+        &lt;div class="separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle btn-icon" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                &lt;i class="material-icon theme-icon-active"&gt;dark_mode&lt;/i&gt;
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100; --bs-dropdown-min-width: 12rem;"&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light"&gt;&lt;i class="material-icon theme-icon"&gt;light_mode&lt;/i&gt; Vaalea &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark"&gt;&lt;i class="material-icon"&gt;dark_mode&lt;/i&gt; Tumma &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto"&gt;&lt;i class="material-icon"&gt;brightness_medium&lt;/i&gt; Automaattinen &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;jim-store-language class="jim-store-language separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle text-uppercase" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                fi
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100"&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="/fi/Home/ChangeCurrentCulture?newlang=fi"&gt;&lt;div class="flag-fi img-fluid border-radius-circle d-inline-block me-2" style="width: 1rem; height: 1rem"&gt;&lt;/div&gt; Suomi&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/jim-store-language&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const showActiveTheme = theme =&gt; {
+        const activeThemeIcon = document.querySelector('i.theme-icon-active');
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+        document.querySelectorAll('[data-bs-theme-value] &gt; i.theme-active-check').forEach(element =&gt; {
+            if (element.parentNode == btnToActive) {
+                element.classList.remove('d-none');
+                activeThemeIcon.innerHTML = btnToActive.childNodes[0].innerHTML;
+            }
+            else {
+                element.classList.add('d-none');
+            }
+        });
+    }
+    showActiveTheme(getPreferredTheme());
+   
+    window.addEventListener('DOMContentLoaded', () =&gt; {
+        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle =&gt; {
+            toggle.addEventListener('click', () =&gt; {
+                const theme = tog... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-09-21T12:20:17.262087" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-09-21T12:20:17.262207" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>jimms</arg>
+<arg>${category}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-09-21T12:20:17.083437" elapsed="0.178791"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-09-21T12:20:17.262920" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-09-21T12:20:17.262514" elapsed="0.000453"/>
+</kw>
+<arg>Should Be Equal As Numbers</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-09-21T12:20:17.262377" elapsed="0.000641"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:17.416373" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Komponentit_landing_page.png"&gt;&lt;img src="Komponentit_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${category}_landing_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-21T12:20:17.263104" elapsed="0.153351"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:20:19.419312" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:20:17.416579" elapsed="2.002968"/>
+</kw>
+<var name="${category}">Komponentit</var>
+<status status="PASS" start="2024-09-21T12:20:13.947474" elapsed="5.472227"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:20:19.420551" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Oheislaitteet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:20:19.420190" elapsed="0.000392"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:19.420871" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Oheislaitteet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:20:19.420713" elapsed="1.390816"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:20:20.987010" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Oheislaitteet 
+ path_url=/fi/Product/Oheislaitteet 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
+ body=None 
+ </msg>
+<msg time="2024-09-21T12:20:20.987482" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Oheislaitteet 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 21 Sep 2024 09:20:20 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=B6Ft5v%2FapZe2etUgA5s1UZyqo7zMzbGX58oHgZ8YIh9SqNy%2BQETSoWNUWTGq%2BlmLRVK0YTmX9j%2BU4YBmhoOL8xnlfZDRNnf4lyA3QdVX9Nbfrt5M6NRLOiWgkXvc4g%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c68fa929d868d7b-HEL', 'Content-Encoding': 'gzip'} 
+ body=
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fi"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; utf-8" /&gt;
+    &lt;meta http-equiv="Content-language" content="fi" /&gt;
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2, user-scalable=yes, viewport-fit=auto"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    &lt;meta name="format-detection" content="telephone=no" /&gt;
+    &lt;meta http-equiv="cache-control" content="max-age=0" /&gt;
+    &lt;meta http-equiv="cache-control" content="no-cache" /&gt;
+    &lt;meta http-equiv="expires" content="0" /&gt;
+    &lt;meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" /&gt;
+    &lt;meta http-equiv="pragma" content="no-cache" /&gt;
+
+    &lt;meta property="og:title" content="Oheislaitteet - Jimms.fi"&gt;
+&lt;meta property="og:url" content="https://www.jimms.fi/fi/Product/Oheislaitteet"&gt;
+&lt;meta property="og:image" content="http://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:secure_url" content="https://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:type" content="image/jpeg"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:description" content="L&amp;#246;yd&amp;#228;t meilt&amp;#228; n&amp;#228;pp&amp;#228;imist&amp;#246;t, hiiret, kuulokkeet, tulostimet, ylij&amp;#228;nnitesuojat sek&amp;#228; paljon muuta! Ja nettitilauksiin ilmaiset postikulut!"&gt;
+&lt;meta property="og:site_name" content="Jimms.fi"&gt;
+&lt;meta property="fb:app_id" content="297181540295864"&gt;
+&lt;meta name="description" content="L&amp;#246;yd&amp;#228;t meilt&amp;#228; n&amp;#228;pp&amp;#228;imist&amp;#246;t, hiiret, kuulokkeet, tulostimet, ylij&amp;#228;nnitesuojat sek&amp;#228; paljon muuta! Ja nettitilauksiin ilmaiset postikulut!" /&gt;
+
+    
+
+	&lt;meta name="application-name" content="Jimms.fi"&gt;
+	&lt;meta name="msapplication-TileColor" content="#333333"/&gt;
+	&lt;meta name="msapplication-TileImage" content="/Content/SiteIcons/mstile-144x144.png"/&gt;
+	&lt;meta name="theme-color" content="#bb3300"/&gt;
+
+	&lt;link rel="apple-touch-icon" sizes="57x57" href="/Content/SiteIcons/apple-touch-icon-57x57.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="60x60" href="/Content/SiteIcons/apple-touch-icon-60x60.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="72x72" href="/Content/SiteIcons/apple-touch-icon-72x72.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="76x76" href="/Content/SiteIcons/apple-touch-icon-76x76.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="114x114" href="/Content/SiteIcons/apple-touch-icon-114x114.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="120x120" href="/Content/SiteIcons/apple-touch-icon-120x120.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="144x144" href="/Content/SiteIcons/apple-touch-icon-144x144.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="152x152" href="/Content/SiteIcons/apple-touch-icon-152x152.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="180x180" href="/Content/SiteIcons/apple-touch-icon-180x180.png"/&gt;
+	
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-32x32.png" sizes="32x32"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/android-chrome-192x192.png" sizes="192x192"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-96x96.png" sizes="96x96"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-16x16.png" sizes="16x16"/&gt;
+	
+	&lt;link rel="manifest" href="/manifest.json?v4"/&gt;
+
+	
+
+    &lt;title&gt;Oheislaitteet - Jimms.fi&lt;/title&gt;
+
+    
+    &lt;link rel="preload" href="/Content/fonts/opensans.woff2" as="font" type="font/woff2" crossorigin&gt;
+    &lt;link rel="preload" href="/Content/fonts/material-icons-round.woff2" as="font" type="font/woff2" crossorigin&gt;
+    
+    &lt;link async rel="stylesheet" type="text/css" href="/Content/libs.min.css?v=fl_8" /&gt;
+    &lt;link defer rel="stylesheet" type="text/css" href="/Content/jimms.min.css?v=fl_45" /&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        var languageCode = "fi";
+
+        window.defaultTheme = 'auto';
+        
+
+    &lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/app.bundle.js?v=fl_6"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/jimmsfi.min.js?v=fl_45"&gt;&lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        viewModel.ShoppingCart = new jimmsfi.ShoppingCartViewModel(true, 0, 0);
+        
+
+        window.DY = window.DY || {};
+        DY.userActiveConsent = { accepted: false }
+        DY.recommendationContext = {
+            type: 'CATEGORY', 
+            data: ['Oheislaitteet'],
+            lng: 'fi_FI'
+        };
+    &lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {'functionality_storage':'granted','security_storage':'granted','analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied',wait_for_update: 100}); 
+
+        dataLayer.push({'event': 'page_information', 'pageType': 'category'});
+        dataLayer.push({'event': 'page_Theme','pageTheme': window.currentTheme});
+
+        window.gtm_consent = {'analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied'};
+        gtag('set', 'ads_data_redaction', true);
+    &lt;/script&gt;
+
+    &lt;script type="text/javascript" src="/Scripts/ui.bundle.js?v=fl_8"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/elements.min.js?v=fl_25"&gt;&lt;/script&gt;
+
+    
+    
+ 
+
+	&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTKJJ5');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+
+
+    
+
+
+
+
+
+
+ 
+    
+
+
+
+    &lt;link rel="preconnect" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//rcom-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//rcom-eu.dynamicyield.com"&gt;
+
+
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_dynamic.js"&gt;&lt;/script&gt;
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_static.js"&gt;&lt;/script&gt; 
+
+
+    
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTKJJ5"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    
+
+    &lt;div class="jim-toplinkbar"&gt;
+    &lt;div class="container"&gt;
+
+        &lt;a href="https://blog.jimms.fi" target=_blank&gt;Blogi&lt;/a&gt;
+        &lt;a href="/fi/Info/Faq"&gt;UKK&lt;/a&gt;
+        &lt;a href="/fi/Pages/B2B"&gt;Yritysmyynti&lt;/a&gt;
+        &lt;a href="/fi/Info/Contact"&gt;Yhteystiedot&lt;/a&gt;
+
+        &lt;div class="separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle btn-icon" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                &lt;i class="material-icon theme-icon-active"&gt;dark_mode&lt;/i&gt;
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100; --bs-dropdown-min-width: 12rem;"&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light"&gt;&lt;i class="material-icon theme-icon"&gt;light_mode&lt;/i&gt; Vaalea &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark"&gt;&lt;i class="material-icon"&gt;dark_mode&lt;/i&gt; Tumma &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto"&gt;&lt;i class="material-icon"&gt;brightness_medium&lt;/i&gt; Automaattinen &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;jim-store-language class="jim-store-language separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle text-uppercase" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                fi
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100"&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="/fi/Home/ChangeCurrentCulture?newlang=fi"&gt;&lt;div class="flag-fi img-fluid border-radius-circle d-inline-block me-2" style="width: 1rem; height: 1rem"&gt;&lt;/div&gt; Suomi&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/jim-store-language&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const showActiveTheme = theme =&gt; {
+        const activeThemeIcon = document.querySelector('i.theme-icon-active');
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+        document.querySelectorAll('[data-bs-theme-value] &gt; i.theme-active-check').forEach(element =&gt; {
+            if (element.parentNode == btnToActive) {
+                element.classList.remove('d-none');
+                activeThemeIcon.innerHTML = btnToActive.childNodes[0].innerHTML;
+            }
+            else {
+                element.classList.add('d-none');
+            }
+        });
+    }
+    showActiveTheme(getPreferredTheme());
+   
+    window.addEventListener('DOMContentLoaded', () =&gt; {
+        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle =&gt; {
+            toggle.addEventLi... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-09-21T12:20:20.987747" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-09-21T12:20:20.987921" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>jimms</arg>
+<arg>${category}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-09-21T12:20:20.811776" elapsed="0.176167"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-09-21T12:20:20.988677" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-09-21T12:20:20.988247" elapsed="0.000480"/>
+</kw>
+<arg>Should Be Equal As Numbers</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-09-21T12:20:20.988102" elapsed="0.000680"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:21.194210" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Oheislaitteet_landing_page.png"&gt;&lt;img src="Oheislaitteet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${category}_landing_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-21T12:20:20.988873" elapsed="0.205418"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:20:23.196853" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:20:21.194418" elapsed="2.002522"/>
+</kw>
+<var name="${category}">Oheislaitteet</var>
+<status status="PASS" start="2024-09-21T12:20:19.419979" elapsed="3.777016"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:20:23.197341" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/SimRacing</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:20:23.197191" elapsed="0.000166"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:23.197505" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/SimRacing'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:20:23.197427" elapsed="1.320028"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:20:24.783882" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/SimRacing 
+ path_url=/fi/Product/SimRacing 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
+ body=None 
+ </msg>
+<msg time="2024-09-21T12:20:24.784295" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/SimRacing 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 21 Sep 2024 09:20:24 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ljlutbuXtubo%2B5ihAfyFhSZUwDdoKPbwDumtacvpo1CyobawmKpclS4jxW%2FrMh5kRI2Fzql47g474Alsyb570pqojFC8JS%2BSiAL4hFchb20%2FGC61VeF9NPG7svdLnQ%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c68faaa29458d7b-HEL', 'Content-Encoding': 'gzip'} 
+ body=
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fi"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; utf-8" /&gt;
+    &lt;meta http-equiv="Content-language" content="fi" /&gt;
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2, user-scalable=yes, viewport-fit=auto"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    &lt;meta name="format-detection" content="telephone=no" /&gt;
+    &lt;meta http-equiv="cache-control" content="max-age=0" /&gt;
+    &lt;meta http-equiv="cache-control" content="no-cache" /&gt;
+    &lt;meta http-equiv="expires" content="0" /&gt;
+    &lt;meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" /&gt;
+    &lt;meta http-equiv="pragma" content="no-cache" /&gt;
+
+    &lt;meta property="og:title" content="Sim Racing - Jimms.fi"&gt;
+&lt;meta property="og:url" content="https://www.jimms.fi/fi/Product/SimRacing"&gt;
+&lt;meta property="og:image" content="http://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:secure_url" content="https://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:type" content="image/jpeg"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:description" content="Jimms.fi on asiantunteva tietotekniikan, komponenttien ja viihde-elektroniikan verkkokauppa. Tilauksiin aina saatavilla ilmainen toimitusvaihtoehto!"&gt;
+&lt;meta property="og:site_name" content="Jimms.fi"&gt;
+&lt;meta property="fb:app_id" content="297181540295864"&gt;
+&lt;meta name="description" content="Jimms.fi on asiantunteva tietotekniikan, komponenttien ja viihde-elektroniikan verkkokauppa. Tilauksiin aina saatavilla ilmainen toimitusvaihtoehto!" /&gt;
+
+    
+
+	&lt;meta name="application-name" content="Jimms.fi"&gt;
+	&lt;meta name="msapplication-TileColor" content="#333333"/&gt;
+	&lt;meta name="msapplication-TileImage" content="/Content/SiteIcons/mstile-144x144.png"/&gt;
+	&lt;meta name="theme-color" content="#bb3300"/&gt;
+
+	&lt;link rel="apple-touch-icon" sizes="57x57" href="/Content/SiteIcons/apple-touch-icon-57x57.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="60x60" href="/Content/SiteIcons/apple-touch-icon-60x60.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="72x72" href="/Content/SiteIcons/apple-touch-icon-72x72.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="76x76" href="/Content/SiteIcons/apple-touch-icon-76x76.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="114x114" href="/Content/SiteIcons/apple-touch-icon-114x114.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="120x120" href="/Content/SiteIcons/apple-touch-icon-120x120.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="144x144" href="/Content/SiteIcons/apple-touch-icon-144x144.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="152x152" href="/Content/SiteIcons/apple-touch-icon-152x152.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="180x180" href="/Content/SiteIcons/apple-touch-icon-180x180.png"/&gt;
+	
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-32x32.png" sizes="32x32"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/android-chrome-192x192.png" sizes="192x192"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-96x96.png" sizes="96x96"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-16x16.png" sizes="16x16"/&gt;
+	
+	&lt;link rel="manifest" href="/manifest.json?v4"/&gt;
+
+	
+
+    &lt;title&gt;Sim Racing - Jimms.fi&lt;/title&gt;
+
+    
+    &lt;link rel="preload" href="/Content/fonts/opensans.woff2" as="font" type="font/woff2" crossorigin&gt;
+    &lt;link rel="preload" href="/Content/fonts/material-icons-round.woff2" as="font" type="font/woff2" crossorigin&gt;
+    
+    &lt;link async rel="stylesheet" type="text/css" href="/Content/libs.min.css?v=fl_8" /&gt;
+    &lt;link defer rel="stylesheet" type="text/css" href="/Content/jimms.min.css?v=fl_45" /&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        var languageCode = "fi";
+
+        window.defaultTheme = 'auto';
+        
+
+    &lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/app.bundle.js?v=fl_6"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/jimmsfi.min.js?v=fl_45"&gt;&lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        viewModel.ShoppingCart = new jimmsfi.ShoppingCartViewModel(true, 0, 0);
+        
+
+        window.DY = window.DY || {};
+        DY.userActiveConsent = { accepted: false }
+        DY.recommendationContext = {
+            type: 'CATEGORY', 
+            data: ['Sim Racing'],
+            lng: 'fi_FI'
+        };
+    &lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {'functionality_storage':'granted','security_storage':'granted','analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied',wait_for_update: 100}); 
+
+        dataLayer.push({'event': 'page_information', 'pageType': 'category'});
+        dataLayer.push({'event': 'page_Theme','pageTheme': window.currentTheme});
+
+        window.gtm_consent = {'analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied'};
+        gtag('set', 'ads_data_redaction', true);
+    &lt;/script&gt;
+
+    &lt;script type="text/javascript" src="/Scripts/ui.bundle.js?v=fl_8"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/elements.min.js?v=fl_25"&gt;&lt;/script&gt;
+
+    
+    
+ 
+
+	&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTKJJ5');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+
+
+    
+
+
+
+
+
+
+ 
+    
+
+
+
+    &lt;link rel="preconnect" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//rcom-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//rcom-eu.dynamicyield.com"&gt;
+
+
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_dynamic.js"&gt;&lt;/script&gt;
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_static.js"&gt;&lt;/script&gt; 
+
+
+    
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTKJJ5"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    
+
+    &lt;div class="jim-toplinkbar"&gt;
+    &lt;div class="container"&gt;
+
+        &lt;a href="https://blog.jimms.fi" target=_blank&gt;Blogi&lt;/a&gt;
+        &lt;a href="/fi/Info/Faq"&gt;UKK&lt;/a&gt;
+        &lt;a href="/fi/Pages/B2B"&gt;Yritysmyynti&lt;/a&gt;
+        &lt;a href="/fi/Info/Contact"&gt;Yhteystiedot&lt;/a&gt;
+
+        &lt;div class="separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle btn-icon" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                &lt;i class="material-icon theme-icon-active"&gt;dark_mode&lt;/i&gt;
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100; --bs-dropdown-min-width: 12rem;"&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light"&gt;&lt;i class="material-icon theme-icon"&gt;light_mode&lt;/i&gt; Vaalea &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark"&gt;&lt;i class="material-icon"&gt;dark_mode&lt;/i&gt; Tumma &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto"&gt;&lt;i class="material-icon"&gt;brightness_medium&lt;/i&gt; Automaattinen &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;jim-store-language class="jim-store-language separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle text-uppercase" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                fi
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100"&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="/fi/Home/ChangeCurrentCulture?newlang=fi"&gt;&lt;div class="flag-fi img-fluid border-radius-circle d-inline-block me-2" style="width: 1rem; height: 1rem"&gt;&lt;/div&gt; Suomi&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/jim-store-language&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const showActiveTheme = theme =&gt; {
+        const activeThemeIcon = document.querySelector('i.theme-icon-active');
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+        document.querySelectorAll('[data-bs-theme-value] &gt; i.theme-active-check').forEach(element =&gt; {
+            if (element.parentNode == btnToActive) {
+                element.classList.remove('d-none');
+                activeThemeIcon.innerHTML = btnToActive.childNodes[0].innerHTML;
+            }
+            else {
+                element.classList.add('d-none');
+            }
+        });
+    }
+    showActiveTheme(getPreferredTheme());
+   
+    window.addEventListener('DOMContentLoaded', () =&gt; {
+        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle =&gt; {
+            toggle.addEventListener('click', () =&gt; {
+                const theme = toggle.getAt... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-09-21T12:20:24.785392" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-09-21T12:20:24.785626" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>jimms</arg>
+<arg>${category}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-09-21T12:20:24.517600" elapsed="0.268048"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-09-21T12:20:24.786514" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-09-21T12:20:24.785966" elapsed="0.000599"/>
+</kw>
+<arg>Should Be Equal As Numbers</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-09-21T12:20:24.785826" elapsed="0.000795"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:25.003951" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SimRacing_landing_page.png"&gt;&lt;img src="SimRacing_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${category}_landing_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-21T12:20:24.786717" elapsed="0.217372"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:20:27.006693" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:20:25.004231" elapsed="2.002567"/>
+</kw>
+<var name="${category}">SimRacing</var>
+<status status="PASS" start="2024-09-21T12:20:23.197110" elapsed="3.809760"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:20:27.007330" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Verkkotuotteet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:20:27.007131" elapsed="0.000222"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:27.007558" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Verkkotuotteet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:20:27.007449" elapsed="1.125133"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:20:28.282334" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Verkkotuotteet 
+ path_url=/fi/Product/Verkkotuotteet 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
+ body=None 
+ </msg>
+<msg time="2024-09-21T12:20:28.282736" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Verkkotuotteet 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 21 Sep 2024 09:20:28 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=gQenxM6tkYN05d%2BRC3fo6signKoWuqntAxfeBUCNIcJg8XVDGIrt2AYBPl%2F3GGJWaSWO6lXsymSzWYX68ZV1xaVE94jHwyy7qKkcK%2BYU3GYcTvUD%2BofccZY51Gj0PQ%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c68fac05b418d7b-HEL', 'Content-Encoding': 'gzip'} 
+ body=
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fi"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; utf-8" /&gt;
+    &lt;meta http-equiv="Content-language" content="fi" /&gt;
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2, user-scalable=yes, viewport-fit=auto"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    &lt;meta name="format-detection" content="telephone=no" /&gt;
+    &lt;meta http-equiv="cache-control" content="max-age=0" /&gt;
+    &lt;meta http-equiv="cache-control" content="no-cache" /&gt;
+    &lt;meta http-equiv="expires" content="0" /&gt;
+    &lt;meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" /&gt;
+    &lt;meta http-equiv="pragma" content="no-cache" /&gt;
+
+    &lt;meta property="og:title" content="Verkkotuotteet - Jimms.fi"&gt;
+&lt;meta property="og:url" content="https://www.jimms.fi/fi/Product/Verkkotuotteet"&gt;
+&lt;meta property="og:image" content="http://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:secure_url" content="https://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:type" content="image/jpeg"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:description" content="L&amp;#246;yd&amp;#228;t meilt&amp;#228; verkkolaitteet kotiin, m&amp;#246;kille sek&amp;#228; toimistoosi. Ja nettitilauksiin ilmaiset postikulut!"&gt;
+&lt;meta property="og:site_name" content="Jimms.fi"&gt;
+&lt;meta property="fb:app_id" content="297181540295864"&gt;
+&lt;meta name="description" content="L&amp;#246;yd&amp;#228;t meilt&amp;#228; verkkolaitteet kotiin, m&amp;#246;kille sek&amp;#228; toimistoosi. Ja nettitilauksiin ilmaiset postikulut!" /&gt;
+
+    
+
+	&lt;meta name="application-name" content="Jimms.fi"&gt;
+	&lt;meta name="msapplication-TileColor" content="#333333"/&gt;
+	&lt;meta name="msapplication-TileImage" content="/Content/SiteIcons/mstile-144x144.png"/&gt;
+	&lt;meta name="theme-color" content="#bb3300"/&gt;
+
+	&lt;link rel="apple-touch-icon" sizes="57x57" href="/Content/SiteIcons/apple-touch-icon-57x57.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="60x60" href="/Content/SiteIcons/apple-touch-icon-60x60.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="72x72" href="/Content/SiteIcons/apple-touch-icon-72x72.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="76x76" href="/Content/SiteIcons/apple-touch-icon-76x76.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="114x114" href="/Content/SiteIcons/apple-touch-icon-114x114.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="120x120" href="/Content/SiteIcons/apple-touch-icon-120x120.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="144x144" href="/Content/SiteIcons/apple-touch-icon-144x144.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="152x152" href="/Content/SiteIcons/apple-touch-icon-152x152.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="180x180" href="/Content/SiteIcons/apple-touch-icon-180x180.png"/&gt;
+	
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-32x32.png" sizes="32x32"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/android-chrome-192x192.png" sizes="192x192"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-96x96.png" sizes="96x96"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-16x16.png" sizes="16x16"/&gt;
+	
+	&lt;link rel="manifest" href="/manifest.json?v4"/&gt;
+
+	
+
+    &lt;title&gt;Verkkotuotteet - Jimms.fi&lt;/title&gt;
+
+    
+    &lt;link rel="preload" href="/Content/fonts/opensans.woff2" as="font" type="font/woff2" crossorigin&gt;
+    &lt;link rel="preload" href="/Content/fonts/material-icons-round.woff2" as="font" type="font/woff2" crossorigin&gt;
+    
+    &lt;link async rel="stylesheet" type="text/css" href="/Content/libs.min.css?v=fl_8" /&gt;
+    &lt;link defer rel="stylesheet" type="text/css" href="/Content/jimms.min.css?v=fl_45" /&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        var languageCode = "fi";
+
+        window.defaultTheme = 'auto';
+        
+
+    &lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/app.bundle.js?v=fl_6"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/jimmsfi.min.js?v=fl_45"&gt;&lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        viewModel.ShoppingCart = new jimmsfi.ShoppingCartViewModel(true, 0, 0);
+        
+
+        window.DY = window.DY || {};
+        DY.userActiveConsent = { accepted: false }
+        DY.recommendationContext = {
+            type: 'CATEGORY', 
+            data: ['Verkkotuotteet'],
+            lng: 'fi_FI'
+        };
+    &lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {'functionality_storage':'granted','security_storage':'granted','analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied',wait_for_update: 100}); 
+
+        dataLayer.push({'event': 'page_information', 'pageType': 'category'});
+        dataLayer.push({'event': 'page_Theme','pageTheme': window.currentTheme});
+
+        window.gtm_consent = {'analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied'};
+        gtag('set', 'ads_data_redaction', true);
+    &lt;/script&gt;
+
+    &lt;script type="text/javascript" src="/Scripts/ui.bundle.js?v=fl_8"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/elements.min.js?v=fl_25"&gt;&lt;/script&gt;
+
+    
+    
+ 
+
+	&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTKJJ5');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+
+
+    
+
+
+
+
+
+
+ 
+    
+
+
+
+    &lt;link rel="preconnect" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//rcom-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//rcom-eu.dynamicyield.com"&gt;
+
+
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_dynamic.js"&gt;&lt;/script&gt;
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_static.js"&gt;&lt;/script&gt; 
+
+
+    
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTKJJ5"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    
+
+    &lt;div class="jim-toplinkbar"&gt;
+    &lt;div class="container"&gt;
+
+        &lt;a href="https://blog.jimms.fi" target=_blank&gt;Blogi&lt;/a&gt;
+        &lt;a href="/fi/Info/Faq"&gt;UKK&lt;/a&gt;
+        &lt;a href="/fi/Pages/B2B"&gt;Yritysmyynti&lt;/a&gt;
+        &lt;a href="/fi/Info/Contact"&gt;Yhteystiedot&lt;/a&gt;
+
+        &lt;div class="separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle btn-icon" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                &lt;i class="material-icon theme-icon-active"&gt;dark_mode&lt;/i&gt;
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100; --bs-dropdown-min-width: 12rem;"&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light"&gt;&lt;i class="material-icon theme-icon"&gt;light_mode&lt;/i&gt; Vaalea &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark"&gt;&lt;i class="material-icon"&gt;dark_mode&lt;/i&gt; Tumma &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto"&gt;&lt;i class="material-icon"&gt;brightness_medium&lt;/i&gt; Automaattinen &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;jim-store-language class="jim-store-language separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle text-uppercase" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                fi
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100"&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="/fi/Home/ChangeCurrentCulture?newlang=fi"&gt;&lt;div class="flag-fi img-fluid border-radius-circle d-inline-block me-2" style="width: 1rem; height: 1rem"&gt;&lt;/div&gt; Suomi&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/jim-store-language&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const showActiveTheme = theme =&gt; {
+        const activeThemeIcon = document.querySelector('i.theme-icon-active');
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+        document.querySelectorAll('[data-bs-theme-value] &gt; i.theme-active-check').forEach(element =&gt; {
+            if (element.parentNode == btnToActive) {
+                element.classList.remove('d-none');
+                activeThemeIcon.innerHTML = btnToActive.childNodes[0].innerHTML;
+            }
+            else {
+                element.classList.add('d-none');
+            }
+        });
+    }
+    showActiveTheme(getPreferredTheme());
+   
+    window.addEventListener('DOMContentLoaded', () =&gt; {
+        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle =&gt; {
+            toggle.addEventListener('click', () =&gt; {
+                const theme = toggle.getAttribute('data-bs-theme-va... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-09-21T12:20:28.283020" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-09-21T12:20:28.283180" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>jimms</arg>
+<arg>${category}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-09-21T12:20:28.132740" elapsed="0.150465"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-09-21T12:20:28.283889" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-09-21T12:20:28.283492" elapsed="0.000443"/>
+</kw>
+<arg>Should Be Equal As Numbers</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-09-21T12:20:28.283360" elapsed="0.000625"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:28.486762" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Verkkotuotteet_landing_page.png"&gt;&lt;img src="Verkkotuotteet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${category}_landing_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-21T12:20:28.284069" elapsed="0.202780"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:20:30.488351" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:20:28.487001" elapsed="2.001442"/>
+</kw>
+<var name="${category}">Verkkotuotteet</var>
+<status status="PASS" start="2024-09-21T12:20:27.007023" elapsed="3.481483"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:20:30.488911" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tarvikkeet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:20:30.488740" elapsed="0.000190"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:30.489112" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tarvikkeet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:20:30.489010" elapsed="1.330959"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:20:32.049372" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Tarvikkeet 
+ path_url=/fi/Product/Tarvikkeet 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
+ body=None 
+ </msg>
+<msg time="2024-09-21T12:20:32.049822" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Tarvikkeet 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 21 Sep 2024 09:20:31 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=myZpuPBfXu9AAdD4R%2BxSicA2Sb4%2F2rqlJXwZs5z0wB%2FTeS3tGd5P8wipv5K0%2Bp6csgfPeO6gOajiC0DiRskRg5jLu2xAn0EkDhg8N%2FszJ%2FxSlihdX388chlYeovNzw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c68fad76e1a8d7b-HEL', 'Content-Encoding': 'gzip'} 
+ body=
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fi"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; utf-8" /&gt;
+    &lt;meta http-equiv="Content-language" content="fi" /&gt;
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2, user-scalable=yes, viewport-fit=auto"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    &lt;meta name="format-detection" content="telephone=no" /&gt;
+    &lt;meta http-equiv="cache-control" content="max-age=0" /&gt;
+    &lt;meta http-equiv="cache-control" content="no-cache" /&gt;
+    &lt;meta http-equiv="expires" content="0" /&gt;
+    &lt;meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" /&gt;
+    &lt;meta http-equiv="pragma" content="no-cache" /&gt;
+
+    &lt;meta property="og:title" content="Tarvikkeet - Jimms.fi"&gt;
+&lt;meta property="og:url" content="https://www.jimms.fi/fi/Product/Tarvikkeet"&gt;
+&lt;meta property="og:image" content="http://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:secure_url" content="https://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:type" content="image/jpeg"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:description" content="L&amp;#246;yd&amp;#228;t meilt&amp;#228; tarvikkeet kannettaviin, tableteihin, puhelimiin, tulostimiin sek&amp;#228; paljon muuhun. Ja nettitilauksiin ilmaiset postikulut!"&gt;
+&lt;meta property="og:site_name" content="Jimms.fi"&gt;
+&lt;meta property="fb:app_id" content="297181540295864"&gt;
+&lt;meta name="description" content="L&amp;#246;yd&amp;#228;t meilt&amp;#228; tarvikkeet kannettaviin, tableteihin, puhelimiin, tulostimiin sek&amp;#228; paljon muuhun. Ja nettitilauksiin ilmaiset postikulut!" /&gt;
+
+    
+
+	&lt;meta name="application-name" content="Jimms.fi"&gt;
+	&lt;meta name="msapplication-TileColor" content="#333333"/&gt;
+	&lt;meta name="msapplication-TileImage" content="/Content/SiteIcons/mstile-144x144.png"/&gt;
+	&lt;meta name="theme-color" content="#bb3300"/&gt;
+
+	&lt;link rel="apple-touch-icon" sizes="57x57" href="/Content/SiteIcons/apple-touch-icon-57x57.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="60x60" href="/Content/SiteIcons/apple-touch-icon-60x60.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="72x72" href="/Content/SiteIcons/apple-touch-icon-72x72.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="76x76" href="/Content/SiteIcons/apple-touch-icon-76x76.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="114x114" href="/Content/SiteIcons/apple-touch-icon-114x114.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="120x120" href="/Content/SiteIcons/apple-touch-icon-120x120.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="144x144" href="/Content/SiteIcons/apple-touch-icon-144x144.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="152x152" href="/Content/SiteIcons/apple-touch-icon-152x152.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="180x180" href="/Content/SiteIcons/apple-touch-icon-180x180.png"/&gt;
+	
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-32x32.png" sizes="32x32"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/android-chrome-192x192.png" sizes="192x192"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-96x96.png" sizes="96x96"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-16x16.png" sizes="16x16"/&gt;
+	
+	&lt;link rel="manifest" href="/manifest.json?v4"/&gt;
+
+	
+
+    &lt;title&gt;Tarvikkeet - Jimms.fi&lt;/title&gt;
+
+    
+    &lt;link rel="preload" href="/Content/fonts/opensans.woff2" as="font" type="font/woff2" crossorigin&gt;
+    &lt;link rel="preload" href="/Content/fonts/material-icons-round.woff2" as="font" type="font/woff2" crossorigin&gt;
+    
+    &lt;link async rel="stylesheet" type="text/css" href="/Content/libs.min.css?v=fl_8" /&gt;
+    &lt;link defer rel="stylesheet" type="text/css" href="/Content/jimms.min.css?v=fl_45" /&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        var languageCode = "fi";
+
+        window.defaultTheme = 'auto';
+        
+
+    &lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/app.bundle.js?v=fl_6"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/jimmsfi.min.js?v=fl_45"&gt;&lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        viewModel.ShoppingCart = new jimmsfi.ShoppingCartViewModel(true, 0, 0);
+        
+
+        window.DY = window.DY || {};
+        DY.userActiveConsent = { accepted: false }
+        DY.recommendationContext = {
+            type: 'CATEGORY', 
+            data: ['Tarvikkeet'],
+            lng: 'fi_FI'
+        };
+    &lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {'functionality_storage':'granted','security_storage':'granted','analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied',wait_for_update: 100}); 
+
+        dataLayer.push({'event': 'page_information', 'pageType': 'category'});
+        dataLayer.push({'event': 'page_Theme','pageTheme': window.currentTheme});
+
+        window.gtm_consent = {'analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied'};
+        gtag('set', 'ads_data_redaction', true);
+    &lt;/script&gt;
+
+    &lt;script type="text/javascript" src="/Scripts/ui.bundle.js?v=fl_8"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/elements.min.js?v=fl_25"&gt;&lt;/script&gt;
+
+    
+    
+ 
+
+	&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTKJJ5');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+
+
+    
+
+
+
+
+
+
+ 
+    
+
+
+
+    &lt;link rel="preconnect" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//rcom-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//rcom-eu.dynamicyield.com"&gt;
+
+
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_dynamic.js"&gt;&lt;/script&gt;
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_static.js"&gt;&lt;/script&gt; 
+
+
+    
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTKJJ5"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    
+
+    &lt;div class="jim-toplinkbar"&gt;
+    &lt;div class="container"&gt;
+
+        &lt;a href="https://blog.jimms.fi" target=_blank&gt;Blogi&lt;/a&gt;
+        &lt;a href="/fi/Info/Faq"&gt;UKK&lt;/a&gt;
+        &lt;a href="/fi/Pages/B2B"&gt;Yritysmyynti&lt;/a&gt;
+        &lt;a href="/fi/Info/Contact"&gt;Yhteystiedot&lt;/a&gt;
+
+        &lt;div class="separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle btn-icon" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                &lt;i class="material-icon theme-icon-active"&gt;dark_mode&lt;/i&gt;
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100; --bs-dropdown-min-width: 12rem;"&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light"&gt;&lt;i class="material-icon theme-icon"&gt;light_mode&lt;/i&gt; Vaalea &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark"&gt;&lt;i class="material-icon"&gt;dark_mode&lt;/i&gt; Tumma &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto"&gt;&lt;i class="material-icon"&gt;brightness_medium&lt;/i&gt; Automaattinen &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;jim-store-language class="jim-store-language separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle text-uppercase" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                fi
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100"&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="/fi/Home/ChangeCurrentCulture?newlang=fi"&gt;&lt;div class="flag-fi img-fluid border-radius-circle d-inline-block me-2" style="width: 1rem; height: 1rem"&gt;&lt;/div&gt; Suomi&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/jim-store-language&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const showActiveTheme = theme =&gt; {
+        const activeThemeIcon = document.querySelector('i.theme-icon-active');
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+        document.querySelectorAll('[data-bs-theme-value] &gt; i.theme-active-check').forEach(element =&gt; {
+            if (element.parentNode == btnToActive) {
+                element.classList.remove('d-none');
+                activeThemeIcon.innerHTML = btnToActive.childNodes[0].innerHTML;
+            }
+            else {
+                element.classList.add('d-none');
+            }
+        });
+    }
+    showActiveTheme(getPreferredTheme());
+   
+    window.addEventListener('DOMContentLoaded', () =&gt; {
+        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle =&gt; {
+            toggle.addEventListener('click', () =&gt; {
+                const theme... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-09-21T12:20:32.050087" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-09-21T12:20:32.050223" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>jimms</arg>
+<arg>${category}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-09-21T12:20:31.820209" elapsed="0.230037"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-09-21T12:20:32.051060" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-09-21T12:20:32.050567" elapsed="0.000550"/>
+</kw>
+<arg>Should Be Equal As Numbers</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-09-21T12:20:32.050415" elapsed="0.000762"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:32.199473" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Tarvikkeet_landing_page.png"&gt;&lt;img src="Tarvikkeet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${category}_landing_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-21T12:20:32.051281" elapsed="0.148280"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:20:34.201591" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:20:32.199695" elapsed="2.002144"/>
+</kw>
+<var name="${category}">Tarvikkeet</var>
+<status status="PASS" start="2024-09-21T12:20:30.488642" elapsed="3.713357"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:20:34.203290" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Erikoistuotteet</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:20:34.202855" elapsed="0.000483"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:34.203728" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Erikoistuotteet'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:20:34.203526" elapsed="1.260219"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:20:35.618121" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Erikoistuotteet 
+ path_url=/fi/Product/Erikoistuotteet 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
+ body=None 
+ </msg>
+<msg time="2024-09-21T12:20:35.618491" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Erikoistuotteet 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 21 Sep 2024 09:20:35 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=zfyfV4b4Z%2B8CBYw9mFZZnCbZQDhEtpp32RXY3959%2FuhY0%2FroDO0uEGzlkJWaGSTxDuYyMhrzA0FOgbVGr1ZQnIFPnLYH3t3sGxBZ8ujW0j1EKrGD%2BCupOOU58Ko7HA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c68faee398b8d7b-HEL', 'Content-Encoding': 'gzip'} 
+ body=
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fi"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; utf-8" /&gt;
+    &lt;meta http-equiv="Content-language" content="fi" /&gt;
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2, user-scalable=yes, viewport-fit=auto"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    &lt;meta name="format-detection" content="telephone=no" /&gt;
+    &lt;meta http-equiv="cache-control" content="max-age=0" /&gt;
+    &lt;meta http-equiv="cache-control" content="no-cache" /&gt;
+    &lt;meta http-equiv="expires" content="0" /&gt;
+    &lt;meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" /&gt;
+    &lt;meta http-equiv="pragma" content="no-cache" /&gt;
+
+    &lt;meta property="og:title" content="J&amp;#228;&amp;#228;hdytys- ja erikoistuotteet - Jimms.fi"&gt;
+&lt;meta property="og:url" content="https://www.jimms.fi/fi/Product/Erikoistuotteet"&gt;
+&lt;meta property="og:image" content="http://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:secure_url" content="https://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:type" content="image/jpeg"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:description" content="L&amp;#246;yd&amp;#228;t meilt&amp;#228; laajan valikoiman tietokoneen j&amp;#228;&amp;#228;hdytt&amp;#228;miseen, hiljent&amp;#228;miseen sek&amp;#228; modaamiseen. Lis&amp;#228;ksi ty&amp;#246;kalut. Ja nettitilauksiin ilmaiset postikulut!"&gt;
+&lt;meta property="og:site_name" content="Jimms.fi"&gt;
+&lt;meta property="fb:app_id" content="297181540295864"&gt;
+&lt;meta name="description" content="L&amp;#246;yd&amp;#228;t meilt&amp;#228; laajan valikoiman tietokoneen j&amp;#228;&amp;#228;hdytt&amp;#228;miseen, hiljent&amp;#228;miseen sek&amp;#228; modaamiseen. Lis&amp;#228;ksi ty&amp;#246;kalut. Ja nettitilauksiin ilmaiset postikulut!" /&gt;
+
+    
+
+	&lt;meta name="application-name" content="Jimms.fi"&gt;
+	&lt;meta name="msapplication-TileColor" content="#333333"/&gt;
+	&lt;meta name="msapplication-TileImage" content="/Content/SiteIcons/mstile-144x144.png"/&gt;
+	&lt;meta name="theme-color" content="#bb3300"/&gt;
+
+	&lt;link rel="apple-touch-icon" sizes="57x57" href="/Content/SiteIcons/apple-touch-icon-57x57.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="60x60" href="/Content/SiteIcons/apple-touch-icon-60x60.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="72x72" href="/Content/SiteIcons/apple-touch-icon-72x72.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="76x76" href="/Content/SiteIcons/apple-touch-icon-76x76.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="114x114" href="/Content/SiteIcons/apple-touch-icon-114x114.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="120x120" href="/Content/SiteIcons/apple-touch-icon-120x120.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="144x144" href="/Content/SiteIcons/apple-touch-icon-144x144.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="152x152" href="/Content/SiteIcons/apple-touch-icon-152x152.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="180x180" href="/Content/SiteIcons/apple-touch-icon-180x180.png"/&gt;
+	
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-32x32.png" sizes="32x32"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/android-chrome-192x192.png" sizes="192x192"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-96x96.png" sizes="96x96"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-16x16.png" sizes="16x16"/&gt;
+	
+	&lt;link rel="manifest" href="/manifest.json?v4"/&gt;
+
+	
+
+    &lt;title&gt;J&amp;#228;&amp;#228;hdytys- ja erikoistuotteet - Jimms.fi&lt;/title&gt;
+
+    
+    &lt;link rel="preload" href="/Content/fonts/opensans.woff2" as="font" type="font/woff2" crossorigin&gt;
+    &lt;link rel="preload" href="/Content/fonts/material-icons-round.woff2" as="font" type="font/woff2" crossorigin&gt;
+    
+    &lt;link async rel="stylesheet" type="text/css" href="/Content/libs.min.css?v=fl_8" /&gt;
+    &lt;link defer rel="stylesheet" type="text/css" href="/Content/jimms.min.css?v=fl_45" /&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        var languageCode = "fi";
+
+        window.defaultTheme = 'auto';
+        
+
+    &lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/app.bundle.js?v=fl_6"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/jimmsfi.min.js?v=fl_45"&gt;&lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        viewModel.ShoppingCart = new jimmsfi.ShoppingCartViewModel(true, 0, 0);
+        
+
+        window.DY = window.DY || {};
+        DY.userActiveConsent = { accepted: false }
+        DY.recommendationContext = {
+            type: 'CATEGORY', 
+            data: ['Jäähdytys- ja erikoistuotteet'],
+            lng: 'fi_FI'
+        };
+    &lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {'functionality_storage':'granted','security_storage':'granted','analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied',wait_for_update: 100}); 
+
+        dataLayer.push({'event': 'page_information', 'pageType': 'category'});
+        dataLayer.push({'event': 'page_Theme','pageTheme': window.currentTheme});
+
+        window.gtm_consent = {'analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied'};
+        gtag('set', 'ads_data_redaction', true);
+    &lt;/script&gt;
+
+    &lt;script type="text/javascript" src="/Scripts/ui.bundle.js?v=fl_8"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/elements.min.js?v=fl_25"&gt;&lt;/script&gt;
+
+    
+    
+ 
+
+	&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTKJJ5');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+
+
+    
+
+
+
+
+
+
+ 
+    
+
+
+
+    &lt;link rel="preconnect" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//rcom-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//rcom-eu.dynamicyield.com"&gt;
+
+
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_dynamic.js"&gt;&lt;/script&gt;
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_static.js"&gt;&lt;/script&gt; 
+
+
+    
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTKJJ5"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    
+
+    &lt;div class="jim-toplinkbar"&gt;
+    &lt;div class="container"&gt;
+
+        &lt;a href="https://blog.jimms.fi" target=_blank&gt;Blogi&lt;/a&gt;
+        &lt;a href="/fi/Info/Faq"&gt;UKK&lt;/a&gt;
+        &lt;a href="/fi/Pages/B2B"&gt;Yritysmyynti&lt;/a&gt;
+        &lt;a href="/fi/Info/Contact"&gt;Yhteystiedot&lt;/a&gt;
+
+        &lt;div class="separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle btn-icon" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                &lt;i class="material-icon theme-icon-active"&gt;dark_mode&lt;/i&gt;
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100; --bs-dropdown-min-width: 12rem;"&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light"&gt;&lt;i class="material-icon theme-icon"&gt;light_mode&lt;/i&gt; Vaalea &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark"&gt;&lt;i class="material-icon"&gt;dark_mode&lt;/i&gt; Tumma &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto"&gt;&lt;i class="material-icon"&gt;brightness_medium&lt;/i&gt; Automaattinen &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;jim-store-language class="jim-store-language separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle text-uppercase" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                fi
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100"&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="/fi/Home/ChangeCurrentCulture?newlang=fi"&gt;&lt;div class="flag-fi img-fluid border-radius-circle d-inline-block me-2" style="width: 1rem; height: 1rem"&gt;&lt;/div&gt; Suomi&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/jim-store-language&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const showActiveTheme = theme =&gt; {
+        const activeThemeIcon = document.querySelector('i.theme-icon-active');
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+        document.querySelectorAll('[data-bs-theme-value] &gt; i.theme-active-check').forEach(element =&gt; {
+            if (element.parentNode == btnToActive) {
+                element.classList.remove('d-none');
+                activeThemeIcon.innerHTML = btnToActive.childNodes[0].innerHTML;
+            }
+            else {
+                element.classList.add('d-none');
+            }
+        });
+    }
+    showActiveTheme(getPreferredTheme());
+   
+    window.addEventListener('DOMContentLoade... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-09-21T12:20:35.618953" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-09-21T12:20:35.619144" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>jimms</arg>
+<arg>${category}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-09-21T12:20:35.463899" elapsed="0.155267"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-09-21T12:20:35.619867" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-09-21T12:20:35.619468" elapsed="0.000445"/>
+</kw>
+<arg>Should Be Equal As Numbers</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-09-21T12:20:35.619328" elapsed="0.000634"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:35.818294" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Erikoistuotteet_landing_page.png"&gt;&lt;img src="Erikoistuotteet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${category}_landing_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-21T12:20:35.620045" elapsed="0.198330"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:20:37.820480" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:20:35.818506" elapsed="2.002091"/>
+</kw>
+<var name="${category}">Erikoistuotteet</var>
+<status status="PASS" start="2024-09-21T12:20:34.202559" elapsed="3.618114"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-21T12:20:37.821137" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Ohjelmistot</msg>
+<var>${category_url}</var>
+<arg>${BASE_URL}${category}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-21T12:20:37.820944" elapsed="0.000214"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:37.821364" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Ohjelmistot'</msg>
+<arg>${category_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-21T12:20:37.821245" elapsed="1.475421"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-21T12:20:39.478827" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Ohjelmistot 
+ path_url=/fi/Product/Ohjelmistot 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
+ body=None 
+ </msg>
+<msg time="2024-09-21T12:20:39.479183" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Ohjelmistot 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 21 Sep 2024 09:20:39 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=UpcmdVCw8mn0dSM%2BS05UxURpm8JVoGFIH7C0yAxGrOXHd6RB2PJ1jJJd4CMWK%2BWAfNDSNqVl2vsCg6B%2FhIf7TamC2wY2hxnHwZ07W2BSSHIr8SccAEQLpYZ9KSLrtw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c68fb066cc28d7b-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fi"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; utf-8" /&gt;
+    &lt;meta http-equiv="Content-language" content="fi" /&gt;
+
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2, user-scalable=yes, viewport-fit=auto"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    &lt;meta name="format-detection" content="telephone=no" /&gt;
+    &lt;meta http-equiv="cache-control" content="max-age=0" /&gt;
+    &lt;meta http-equiv="cache-control" content="no-cache" /&gt;
+    &lt;meta http-equiv="expires" content="0" /&gt;
+    &lt;meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" /&gt;
+    &lt;meta http-equiv="pragma" content="no-cache" /&gt;
+
+    &lt;meta property="og:title" content="Ohjelmistot ja pelit - Jimms.fi"&gt;
+&lt;meta property="og:url" content="https://www.jimms.fi/fi/Product/Ohjelmistot"&gt;
+&lt;meta property="og:image" content="http://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:secure_url" content="https://www.jimms.fi/Content/Images/site/jimmsog.jpg"&gt;
+&lt;meta property="og:image:type" content="image/jpeg"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:description" content="L&amp;#246;yd&amp;#228;t meilt&amp;#228; k&amp;#228;ytt&amp;#246;j&amp;#228;rjestelm&amp;#228;t, tietoturvaohjelmistot sek&amp;#228; sovellusohjelmistot. Ja nettitilauksiin ilmaiset postikulut!"&gt;
+&lt;meta property="og:site_name" content="Jimms.fi"&gt;
+&lt;meta property="fb:app_id" content="297181540295864"&gt;
+&lt;meta name="description" content="L&amp;#246;yd&amp;#228;t meilt&amp;#228; k&amp;#228;ytt&amp;#246;j&amp;#228;rjestelm&amp;#228;t, tietoturvaohjelmistot sek&amp;#228; sovellusohjelmistot. Ja nettitilauksiin ilmaiset postikulut!" /&gt;
+
+    
+
+	&lt;meta name="application-name" content="Jimms.fi"&gt;
+	&lt;meta name="msapplication-TileColor" content="#333333"/&gt;
+	&lt;meta name="msapplication-TileImage" content="/Content/SiteIcons/mstile-144x144.png"/&gt;
+	&lt;meta name="theme-color" content="#bb3300"/&gt;
+
+	&lt;link rel="apple-touch-icon" sizes="57x57" href="/Content/SiteIcons/apple-touch-icon-57x57.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="60x60" href="/Content/SiteIcons/apple-touch-icon-60x60.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="72x72" href="/Content/SiteIcons/apple-touch-icon-72x72.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="76x76" href="/Content/SiteIcons/apple-touch-icon-76x76.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="114x114" href="/Content/SiteIcons/apple-touch-icon-114x114.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="120x120" href="/Content/SiteIcons/apple-touch-icon-120x120.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="144x144" href="/Content/SiteIcons/apple-touch-icon-144x144.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="152x152" href="/Content/SiteIcons/apple-touch-icon-152x152.png"/&gt;
+	&lt;link rel="apple-touch-icon" sizes="180x180" href="/Content/SiteIcons/apple-touch-icon-180x180.png"/&gt;
+	
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-32x32.png" sizes="32x32"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/android-chrome-192x192.png" sizes="192x192"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-96x96.png" sizes="96x96"/&gt;
+	&lt;link rel="icon" type="image/png" href="/Content/SiteIcons/favicon-16x16.png" sizes="16x16"/&gt;
+	
+	&lt;link rel="manifest" href="/manifest.json?v4"/&gt;
+
+	
+
+    &lt;title&gt;Ohjelmistot ja pelit - Jimms.fi&lt;/title&gt;
+
+    
+    &lt;link rel="preload" href="/Content/fonts/opensans.woff2" as="font" type="font/woff2" crossorigin&gt;
+    &lt;link rel="preload" href="/Content/fonts/material-icons-round.woff2" as="font" type="font/woff2" crossorigin&gt;
+    
+    &lt;link async rel="stylesheet" type="text/css" href="/Content/libs.min.css?v=fl_8" /&gt;
+    &lt;link defer rel="stylesheet" type="text/css" href="/Content/jimms.min.css?v=fl_45" /&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        var languageCode = "fi";
+
+        window.defaultTheme = 'auto';
+        
+
+    &lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/app.bundle.js?v=fl_6"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/jimmsfi.min.js?v=fl_45"&gt;&lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        viewModel.ShoppingCart = new jimmsfi.ShoppingCartViewModel(true, 0, 0);
+        
+
+        window.DY = window.DY || {};
+        DY.userActiveConsent = { accepted: false }
+        DY.recommendationContext = {
+            type: 'CATEGORY', 
+            data: ['Ohjelmistot ja pelit'],
+            lng: 'fi_FI'
+        };
+    &lt;/script&gt;
+
+    
+    &lt;script type="text/javascript"&gt;
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('consent', 'default', {'functionality_storage':'granted','security_storage':'granted','analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied',wait_for_update: 100}); 
+
+        dataLayer.push({'event': 'page_information', 'pageType': 'category'});
+        dataLayer.push({'event': 'page_Theme','pageTheme': window.currentTheme});
+
+        window.gtm_consent = {'analytics_storage':'denied','personalization_storage':'denied','ad_storage':'denied','ad_user_data': 'denied','ad_personalization':'denied'};
+        gtag('set', 'ads_data_redaction', true);
+    &lt;/script&gt;
+
+    &lt;script type="text/javascript" src="/Scripts/ui.bundle.js?v=fl_8"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/Scripts/elements.min.js?v=fl_25"&gt;&lt;/script&gt;
+
+    
+    
+ 
+
+	&lt;!-- Google Tag Manager --&gt;
+&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTKJJ5');&lt;/script&gt;
+&lt;!-- End Google Tag Manager --&gt;
+
+
+    
+
+
+
+
+
+
+ 
+    
+
+
+
+    &lt;link rel="preconnect" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="preconnect" href="//rcom-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//cdn-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//st-eu.dynamicyield.com"&gt;
+    &lt;link rel="dns-prefetch" href="//rcom-eu.dynamicyield.com"&gt;
+
+
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_dynamic.js"&gt;&lt;/script&gt;
+    &lt;script type="text/plain" data-category="analytics_cookies" src="//cdn-eu.dynamicyield.com/api/9879196/api_static.js"&gt;&lt;/script&gt; 
+
+
+    
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;!-- Google Tag Manager (noscript) --&gt;
+&lt;noscript&gt;&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTKJJ5"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&lt;/noscript&gt;
+&lt;!-- End Google Tag Manager (noscript) --&gt;
+
+    
+
+    &lt;div class="jim-toplinkbar"&gt;
+    &lt;div class="container"&gt;
+
+        &lt;a href="https://blog.jimms.fi" target=_blank&gt;Blogi&lt;/a&gt;
+        &lt;a href="/fi/Info/Faq"&gt;UKK&lt;/a&gt;
+        &lt;a href="/fi/Pages/B2B"&gt;Yritysmyynti&lt;/a&gt;
+        &lt;a href="/fi/Info/Contact"&gt;Yhteystiedot&lt;/a&gt;
+
+        &lt;div class="separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle btn-icon" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                &lt;i class="material-icon theme-icon-active"&gt;dark_mode&lt;/i&gt;
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100; --bs-dropdown-min-width: 12rem;"&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="light"&gt;&lt;i class="material-icon theme-icon"&gt;light_mode&lt;/i&gt; Vaalea &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="dark"&gt;&lt;i class="material-icon"&gt;dark_mode&lt;/i&gt; Tumma &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;button class="dropdown-item d-flex align-items-center gap-2" data-bs-theme-value="auto"&gt;&lt;i class="material-icon"&gt;brightness_medium&lt;/i&gt; Automaattinen &lt;i class="material-icon ms-auto theme-active-check d-none"&gt;check&lt;/i&gt;&lt;/button&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;jim-store-language class="jim-store-language separator-line"&gt;
+
+            &lt;span role="button" class="dropdown-toggle text-uppercase" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+                fi
+            &lt;/span&gt;
+
+            &lt;ul class="dropdown-menu dropdown-menu-end" role="menu" style="z-index: 1100"&gt;
+                &lt;li&gt;&lt;a class="dropdown-item" href="/fi/Home/ChangeCurrentCulture?newlang=fi"&gt;&lt;div class="flag-fi img-fluid border-radius-circle d-inline-block me-2" style="width: 1rem; height: 1rem"&gt;&lt;/div&gt; Suomi&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/jim-store-language&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const showActiveTheme = theme =&gt; {
+        const activeThemeIcon = document.querySelector('i.theme-icon-active');
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+        document.querySelectorAll('[data-bs-theme-value] &gt; i.theme-active-check').forEach(element =&gt; {
+            if (element.parentNode == btnToActive) {
+                element.classList.remove('d-none');
+                activeThemeIcon.innerHTML = btnToActive.childNodes[0].innerHTML;
+            }
+            else {
+                element.classList.add('d-none');
+            }
+        });
+    }
+    showActiveTheme(getPreferredTheme());
+   
+    window.addEventListener('DOMContentLoaded', () =&gt; {
+        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle =&gt; {
+            toggle.addEventListener('c... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2024-09-21T12:20:39.479439" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-09-21T12:20:39.479781" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>jimms</arg>
+<arg>${category}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-09-21T12:20:39.296827" elapsed="0.183009"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-09-21T12:20:39.480626" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-09-21T12:20:39.480175" elapsed="0.000504"/>
+</kw>
+<arg>Should Be Equal As Numbers</arg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<arg>msg=Landing page for ${category} did not return a 200 status.</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-09-21T12:20:39.480013" elapsed="0.000719"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-21T12:20:39.662669" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Ohjelmistot_landing_page.png"&gt;&lt;img src="Ohjelmistot_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${category}_landing_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-21T12:20:39.480824" elapsed="0.181945"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-21T12:20:41.665401" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-21T12:20:39.662913" elapsed="2.004386"/>
+</kw>
+<var name="${category}">Ohjelmistot</var>
+<status status="PASS" start="2024-09-21T12:20:37.820831" elapsed="3.846877"/>
+</iter>
+<var>${category}</var>
+<value>@{CATEGORIES}</value>
+<status status="PASS" start="2024-09-21T12:18:51.172777" elapsed="110.495102"/>
+</for>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-21T12:20:41.668899" elapsed="0.132133"/>
+</kw>
+<doc>This test case verifies that all product categories return a valid landing page, opens the browser to display each page, and takes a screenshot.</doc>
+<status status="PASS" start="2024-09-21T12:18:39.672224" elapsed="122.128998"/>
+</test>
+<status status="PASS" start="2024-09-21T12:18:39.188881" elapsed="122.612738"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Categories">Test Categories</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
