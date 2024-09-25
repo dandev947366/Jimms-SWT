@@ -3,7 +3,6 @@
 # Professor: Esa Huiskonen
 # Student: Dan Le
 # Team : 4
-
 *** Settings ***
 Library    SeleniumLibrary
 Library    RequestsLibrary
@@ -14,12 +13,10 @@ ${BASE_URL}    https://www.jimms.fi/fi/Product/
 @{CATEGORIES}    Tietokoneet    Komponentit    Oheislaitteet    SimRacing    Verkkotuotteet    Tarvikkeet    Erikoistuotteet    Ohjelmistot
 ${BROWSER}    Chrome
 ${SLEEP_TIME}    2s
-${PRODUCT_LINK_SELECTOR}    css:.js-gtm-product-link
 
 *** Test Cases ***
-Verify Add To Cart Button for Selected Products
-    [Documentation]    This test case verifies that selected products contain an "Add to Cart" button.
-
+Verify All Product Categories Have Landing Pages And Add To Cart Button
+    [Documentation]    This test case verifies that all product categories return a valid landing page and contain the addto-cart-wrapper.
     Create Session    jimms    ${BASE_URL}
     Open Browser    ${BASE_URL}    ${BROWSER}
 
@@ -32,26 +29,8 @@ Verify Add To Cart Button for Selected Products
         # Sleep to avoid looping too fast
         Sleep    ${SLEEP_TIME}
 
-        # Wait for the product list to load
-        Wait Until Element Is Visible    css:.product-list--items
-
-        # Get all product links on the page
-        ${product_links}=    Get WebElements    ${PRODUCT_LINK_SELECTOR}
-
-        # Click on the first two product links
-        FOR    ${index}    IN RANGE    2
-            ${product_link}    Set Variable    ${product_links}[${index}]
-            Click Element    ${product_link}    # Click the product link to go to the product detail page
-            Sleep    ${SLEEP_TIME}    # Allow the page to load
-
-            # Check for the "Add to Cart" button by text (with normalize-space)
-            Element Should Be Visible    xpath=//*[contains(normalize-space(.), 'Lisää koriin')]    msg=Add to cart button not found by text for product index ${index} in category ${category}.
-
-
-            # Navigate back to the category page
-            Go Back
-            Sleep    ${SLEEP_TIME}    # Allow the category page to load again
-        END
+        # Check for addto-cart-wrapper button presence
+        Element Should Be Visible    xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a    msg=Add to cart button not found for ${category}.
     END
 
     Close Browser

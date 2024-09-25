@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.10.12 on darwin)" generated="2024-09-25T19:23:15.377915" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.10.12 on darwin)" generated="2024-09-25T20:28:42.561530" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Categories" source="/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/test_categories.robot">
 <test id="s1-t1" name="Verify All Product Categories Have Landing Pages" line="20">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-09-25T19:23:15.497682" level="INFO">Creating Session using : alias=jimms, url=https://www.jimms.fi/fi/Product/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-09-25T20:28:42.846098" level="INFO">Creating Session using : alias=jimms, url=https://www.jimms.fi/fi/Product/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>jimms</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-09-25T19:23:15.497560" elapsed="0.000274"/>
+<status status="PASS" start="2024-09-25T20:28:42.845981" elapsed="0.000251"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:15.498073" level="INFO">Opening browser 'Chrome' to base url 'https://www.jimms.fi/fi/Product/'.</msg>
+<msg time="2024-09-25T20:28:42.846481" level="INFO">Opening browser 'Chrome' to base url 'https://www.jimms.fi/fi/Product/'.</msg>
 <arg>${BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-25T19:23:15.497949" elapsed="2.467441"/>
+<status status="PASS" start="2024-09-25T20:28:42.846359" elapsed="2.797940"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-25T19:23:17.966224" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tietokoneet</msg>
+<msg time="2024-09-25T20:28:45.645163" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tietokoneet</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-25T19:23:17.966067" elapsed="0.000174"/>
+<status status="PASS" start="2024-09-25T20:28:45.644995" elapsed="0.000186"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:17.966395" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tietokoneet'</msg>
+<msg time="2024-09-25T20:28:45.645343" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tietokoneet'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-25T19:23:17.966315" elapsed="0.293445"/>
+<status status="PASS" start="2024-09-25T20:28:45.645257" elapsed="0.293802"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-09-25T19:23:18.344533" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Tietokoneet 
+<msg time="2024-09-25T20:28:46.055940" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Tietokoneet 
  path_url=/fi/Product/Tietokoneet 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-09-25T19:23:18.345078" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Tietokoneet 
+<msg time="2024-09-25T20:28:46.056411" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Tietokoneet 
  status=200, reason=OK 
- headers={'Date': 'Wed, 25 Sep 2024 16:23:18 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'set-cookie': 'JW.CurrentUICulture=fi; expires=Mon, 25-Sep-2034 16:23:18 GMT; path=/; HttpOnly', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=siWnIs69o0psp%2BuFt86%2F9ze%2FU2NnovhkxRbm710dcXwKlQNDLDXpIi7TP8OyDtDr2aHU3wNLTHLVUNooRUGvd3ZQivmBK8tiYvKZA6f9M3niQ7qBcp9EC%2FiRL6HGCg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8c5ba3bfa08d7b-HEL', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Wed, 25 Sep 2024 17:28:46 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'set-cookie': 'JW.CurrentUICulture=fi; expires=Mon, 25-Sep-2034 17:28:46 GMT; path=/; HttpOnly', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Dkuna13OBQ%2FVbq08vPAZLS6Yo9no6SzzzmH0%2BHMF1lEnNcwqDITgNPJvsktm%2FtAdyGebMRDU13xtuVcbZLhBM8sX5%2FgEVTuodeplh8%2FGws0rb0hagDHleIj8by24LA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8cbb87ac9dd916-HEL', 'Content-Encoding': 'gzip'} 
  body=
 &lt;!DOCTYPE html&gt;
 &lt;html lang="fi"&gt;
@@ -252,136 +252,136 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
             toggle.addEventListener('click', () =&gt; {
                 const... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2024-09-25T19:23:18.345306" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-09-25T20:28:46.056623" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-09-25T19:23:18.345418" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-09-25T20:28:46.056724" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>jimms</arg>
 <arg>${category}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-09-25T19:23:18.259929" elapsed="0.085512"/>
+<status status="PASS" start="2024-09-25T20:28:45.939406" elapsed="0.117337"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-09-25T19:23:18.346206" level="INFO">Argument types are:
+<msg time="2024-09-25T20:28:46.057430" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-09-25T19:23:18.345740" elapsed="0.000509"/>
+<status status="PASS" start="2024-09-25T20:28:46.057008" elapsed="0.000458"/>
 </kw>
 <arg>Should Be Equal As Numbers</arg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2024-09-25T19:23:18.345602" elapsed="0.000693"/>
+<status status="PASS" start="2024-09-25T20:28:46.056887" elapsed="0.000621"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:18.346379" elapsed="0.015403"/>
+<status status="PASS" start="2024-09-25T20:28:46.057586" elapsed="0.015955"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:18.366916" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.870DACF28756985E5E13E801032B1992.e.30")&gt;</msg>
+<msg time="2024-09-25T20:28:46.078591" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.141A4232C134EBC8CC8BD8E65086990F.e.56")&gt;</msg>
 <var>${product_link}</var>
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:18.361942" elapsed="0.005006"/>
+<status status="PASS" start="2024-09-25T20:28:46.073731" elapsed="0.004895"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:18.375005" level="INFO">${link_text} = Asus 15,6" TUF Gaming A15 FA507NU, kannettava pelitietokone, Mecha Gray (Tarjous! Norm. 1129,90€)</msg>
+<msg time="2024-09-25T20:28:46.086973" level="INFO">${link_text} = Asus 15,6" TUF Gaming A15 FA507NU, kannettava pelitietokone, Mecha Gray (Tarjous! Norm. 1129,90€)</msg>
 <var>${link_text}</var>
 <arg>${product_link}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:18.367075" elapsed="0.007963"/>
+<status status="PASS" start="2024-09-25T20:28:46.078770" elapsed="0.008235"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-09-25T19:23:18.375288" level="INFO">Product link text is: Asus 15,6" TUF Gaming A15 FA507NU, kannettava pelitietokone, Mecha Gray (Tarjous! Norm. 1129,90€)</msg>
+<msg time="2024-09-25T20:28:46.087278" level="INFO">Product link text is: Asus 15,6" TUF Gaming A15 FA507NU, kannettava pelitietokone, Mecha Gray (Tarjous! Norm. 1129,90€)</msg>
 <arg>Product link text is: ${link_text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-25T19:23:18.375169" elapsed="0.000146"/>
+<status status="PASS" start="2024-09-25T20:28:46.087145" elapsed="0.000168"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:18.381579" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.870DACF28756985E5E13E801032B1992.e.31")&gt;</msg>
+<msg time="2024-09-25T20:28:46.094005" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.141A4232C134EBC8CC8BD8E65086990F.e.57")&gt;</msg>
 <var>${add_to_cart}</var>
 <arg>${ADD_TO_CART_BUTTON_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:18.375382" elapsed="0.006225"/>
+<status status="PASS" start="2024-09-25T20:28:46.087443" elapsed="0.006597"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:18.386396" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.870DACF28756985E5E13E801032B1992.e.31")&gt;' is displayed.</msg>
+<msg time="2024-09-25T20:28:46.098304" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.141A4232C134EBC8CC8BD8E65086990F.e.57")&gt;' is displayed.</msg>
 <arg>${add_to_cart}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:18.381715" elapsed="0.004748"/>
+<status status="PASS" start="2024-09-25T20:28:46.094178" elapsed="0.004189"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:20.388286" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:28:48.099334" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:18.386570" elapsed="2.001807"/>
+<status status="PASS" start="2024-09-25T20:28:46.098470" elapsed="2.000979"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:20.394567" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.870DACF28756985E5E13E801032B1992.e.43")&gt;</msg>
+<msg time="2024-09-25T20:28:48.105873" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.141A4232C134EBC8CC8BD8E65086990F.e.69")&gt;</msg>
 <var>${price}</var>
 <arg>${PRODUCT_PRICE_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:20.388520" elapsed="0.006083"/>
+<status status="PASS" start="2024-09-25T20:28:48.099639" elapsed="0.006272"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2024-09-25T19:23:20.399178" level="INFO">Length is 10.</msg>
+<msg time="2024-09-25T20:28:48.110785" level="INFO">Length is 10.</msg>
 <arg>${price.text}</arg>
 <arg>msg=Product price is missing in ${category}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2024-09-25T19:23:20.394707" elapsed="0.004514"/>
+<status status="PASS" start="2024-09-25T20:28:48.106087" elapsed="0.004744"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:22.400004" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:28:50.111872" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:20.399321" elapsed="2.000809"/>
+<status status="PASS" start="2024-09-25T20:28:48.110942" elapsed="2.001077"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:22.485522" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Tietokoneet_landing_page.png"&gt;&lt;img src="Tietokoneet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-25T20:28:50.200730" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Tietokoneet_landing_page.png"&gt;&lt;img src="Tietokoneet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${category}_landing_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-25T19:23:22.400316" elapsed="0.085292"/>
+<status status="PASS" start="2024-09-25T20:28:50.112176" elapsed="0.088641"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:24.486451" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:28:52.201323" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:22.485744" elapsed="2.000968"/>
+<status status="PASS" start="2024-09-25T20:28:50.200953" elapsed="2.000462"/>
 </kw>
 <var name="${category}">Tietokoneet</var>
-<status status="PASS" start="2024-09-25T19:23:17.965940" elapsed="6.520947"/>
+<status status="PASS" start="2024-09-25T20:28:45.644859" elapsed="6.556614"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-25T19:23:24.488095" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Komponentit</msg>
+<msg time="2024-09-25T20:28:52.201988" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Komponentit</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.487621" elapsed="0.000524"/>
+<status status="PASS" start="2024-09-25T20:28:52.201761" elapsed="0.000271"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:24.488588" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Komponentit'</msg>
+<msg time="2024-09-25T20:28:52.202209" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Komponentit'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.488349" elapsed="0.275918"/>
+<status status="PASS" start="2024-09-25T20:28:52.202114" elapsed="0.290717"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-09-25T19:23:24.823007" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Komponentit 
+<msg time="2024-09-25T20:28:52.593929" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Komponentit 
  path_url=/fi/Product/Komponentit 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
  body=None 
  </msg>
-<msg time="2024-09-25T19:23:24.823402" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Komponentit 
+<msg time="2024-09-25T20:28:52.594408" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Komponentit 
  status=200, reason=OK 
- headers={'Date': 'Wed, 25 Sep 2024 16:23:24 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=wGXXj03WCL%2BXtDzP8CsPXJmjNWPwTGV%2FE1ZcFKX%2BVsti4IvQvuEI17QxEk7tFyMo%2FnZEmY6jR3vpEn7Y5hfFrCsmy9Q5u0cHcVVfik4IOt4SohTXu8S23aEsfJwuMg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8c5bcc3d768d7b-HEL', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Wed, 25 Sep 2024 17:28:52 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=I%2F4gqaNxOTxCWWKwlgPfbwojaMcR3bG9%2FSBCaxkZJAabUiH3sgeeTAqiR1W%2BvZpZTKgNBx%2Bm3mdGBK5Nhv1JE31XQ1v9o7j3lOS177YTaxyuQq%2BeoqC2savG%2FGoq5Q%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8cbbb03becd916-HEL', 'Content-Encoding': 'gzip'} 
  body=
 &lt;!DOCTYPE html&gt;
 &lt;html lang="fi"&gt;
@@ -594,136 +594,136 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
             toggle.addEventListener('click', () =&gt; {
                 const theme = tog... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2024-09-25T19:23:24.823622" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-09-25T20:28:52.594663" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-09-25T19:23:24.823770" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-09-25T20:28:52.594887" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>jimms</arg>
 <arg>${category}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.764412" elapsed="0.059384"/>
+<status status="PASS" start="2024-09-25T20:28:52.493000" elapsed="0.101922"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-09-25T19:23:24.824517" level="INFO">Argument types are:
+<msg time="2024-09-25T20:28:52.595910" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.824080" elapsed="0.000478"/>
+<status status="PASS" start="2024-09-25T20:28:52.595283" elapsed="0.000691"/>
 </kw>
 <arg>Should Be Equal As Numbers</arg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.823950" elapsed="0.000654"/>
+<status status="PASS" start="2024-09-25T20:28:52.595110" elapsed="0.000924"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.824681" elapsed="0.009720"/>
+<status status="PASS" start="2024-09-25T20:28:52.596154" elapsed="0.009966"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:24.839043" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.76DCC632ED38B7E1BF7CFA49410D781E.e.74")&gt;</msg>
+<msg time="2024-09-25T20:28:52.611856" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.772B5FBC9E40EBA01AFB12CC09AC499D.e.100")&gt;</msg>
 <var>${product_link}</var>
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.834551" elapsed="0.004519"/>
+<status status="PASS" start="2024-09-25T20:28:52.606288" elapsed="0.005602"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:24.844742" level="INFO">${link_text} = Asus GeForce RTX 4070 Ti SUPER TUF Gaming - OC Edition -näytönohjain 16GB GDDR6X (Tarjous! Norm. 969,90€)</msg>
+<msg time="2024-09-25T20:28:52.617345" level="INFO">${link_text} = Asus GeForce RTX 4070 Ti SUPER TUF Gaming - OC Edition -näytönohjain 16GB GDDR6X (Tarjous! Norm. 969,90€)</msg>
 <var>${link_text}</var>
 <arg>${product_link}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.839176" elapsed="0.005605"/>
+<status status="PASS" start="2024-09-25T20:28:52.612037" elapsed="0.005338"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-09-25T19:23:24.845057" level="INFO">Product link text is: Asus GeForce RTX 4070 Ti SUPER TUF Gaming - OC Edition -näytönohjain 16GB GDDR6X (Tarjous! Norm. 969,90€)</msg>
+<msg time="2024-09-25T20:28:52.617630" level="INFO">Product link text is: Asus GeForce RTX 4070 Ti SUPER TUF Gaming - OC Edition -näytönohjain 16GB GDDR6X (Tarjous! Norm. 969,90€)</msg>
 <arg>Product link text is: ${link_text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.844926" elapsed="0.000161"/>
+<status status="PASS" start="2024-09-25T20:28:52.617503" elapsed="0.000158"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:24.850016" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.76DCC632ED38B7E1BF7CFA49410D781E.e.75")&gt;</msg>
+<msg time="2024-09-25T20:28:52.622221" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.772B5FBC9E40EBA01AFB12CC09AC499D.e.101")&gt;</msg>
 <var>${add_to_cart}</var>
 <arg>${ADD_TO_CART_BUTTON_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.845155" elapsed="0.004891"/>
+<status status="PASS" start="2024-09-25T20:28:52.617735" elapsed="0.004517"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:24.855157" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.76DCC632ED38B7E1BF7CFA49410D781E.e.75")&gt;' is displayed.</msg>
+<msg time="2024-09-25T20:28:52.626353" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.772B5FBC9E40EBA01AFB12CC09AC499D.e.101")&gt;' is displayed.</msg>
 <arg>${add_to_cart}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.850168" elapsed="0.005053"/>
+<status status="PASS" start="2024-09-25T20:28:52.622374" elapsed="0.004049"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:26.855843" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:28:54.627301" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:24.855331" elapsed="2.000778"/>
+<status status="PASS" start="2024-09-25T20:28:52.626547" elapsed="2.000851"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:26.870993" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.76DCC632ED38B7E1BF7CFA49410D781E.e.91")&gt;</msg>
+<msg time="2024-09-25T20:28:54.632113" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.772B5FBC9E40EBA01AFB12CC09AC499D.e.116")&gt;</msg>
 <var>${price}</var>
 <arg>${PRODUCT_PRICE_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:26.856541" elapsed="0.014522"/>
+<status status="PASS" start="2024-09-25T20:28:54.627548" elapsed="0.004598"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2024-09-25T19:23:26.880083" level="INFO">Length is 8.</msg>
+<msg time="2024-09-25T20:28:54.636713" level="INFO">Length is 8.</msg>
 <arg>${price.text}</arg>
 <arg>msg=Product price is missing in ${category}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2024-09-25T19:23:26.871318" elapsed="0.008844"/>
+<status status="PASS" start="2024-09-25T20:28:54.632275" elapsed="0.004484"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:28.881297" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:28:56.637294" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:26.880354" elapsed="2.001044"/>
+<status status="PASS" start="2024-09-25T20:28:54.636863" elapsed="2.000779"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:28.951976" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Komponentit_landing_page.png"&gt;&lt;img src="Komponentit_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-25T20:28:56.710219" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Komponentit_landing_page.png"&gt;&lt;img src="Komponentit_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${category}_landing_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-25T19:23:28.881537" elapsed="0.070524"/>
+<status status="PASS" start="2024-09-25T20:28:56.638084" elapsed="0.072234"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:30.953552" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:28:58.710875" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:28.952194" elapsed="2.002280"/>
+<status status="PASS" start="2024-09-25T20:28:56.710484" elapsed="2.000485"/>
 </kw>
 <var name="${category}">Komponentit</var>
-<status status="PASS" start="2024-09-25T19:23:24.487350" elapsed="6.468556"/>
+<status status="PASS" start="2024-09-25T20:28:52.201661" elapsed="6.509396"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-25T19:23:30.959219" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Oheislaitteet</msg>
+<msg time="2024-09-25T20:28:58.711553" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Oheislaitteet</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-25T19:23:30.958718" elapsed="0.000558"/>
+<status status="PASS" start="2024-09-25T20:28:58.711360" elapsed="0.000226"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:30.959775" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Oheislaitteet'</msg>
+<msg time="2024-09-25T20:28:58.711795" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Oheislaitteet'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-25T19:23:30.959511" elapsed="0.456723"/>
+<status status="PASS" start="2024-09-25T20:28:58.711689" elapsed="0.277658"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-09-25T19:23:31.492251" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Oheislaitteet 
+<msg time="2024-09-25T20:28:59.074484" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Oheislaitteet 
  path_url=/fi/Product/Oheislaitteet 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
  body=None 
  </msg>
-<msg time="2024-09-25T19:23:31.492641" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Oheislaitteet 
+<msg time="2024-09-25T20:28:59.074861" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Oheislaitteet 
  status=200, reason=OK 
- headers={'Date': 'Wed, 25 Sep 2024 16:23:31 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=sY%2BLpxYjbMYD2ue6s23k8zONjt3bJU9yb7me2Tg34TmpwQeKp1GJ8XxbHVjuLdb3ED5Vr5EasSc2%2BWQhwocyHqd0ty4M1QdA5ozM3GxMurBSLqbWC8w%2B%2Bo9bDdS6Ig%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8c5bf5cd598d7b-HEL', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Wed, 25 Sep 2024 17:28:59 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=S9SsCq8SUpmARgKD41o1b6oSSGDysU2xbTRMLTS8Q7jxQLyvDrmC61f8RTzMKp4GmSj0H2mislWz5nHBfDiIx0knpj%2BUEXVg2p3gJthn5OZDd8BKXjSMH%2B90lz3D5Q%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8cbbd8dc7ed916-HEL', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'} 
  body=
 &lt;!DOCTYPE html&gt;
 &lt;html lang="fi"&gt;
@@ -935,136 +935,136 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
         document.querySelectorAll('[data-bs-theme-value]').forEach(toggle =&gt; {
             toggle.addEventLi... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2024-09-25T19:23:31.492933" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-09-25T20:28:59.075085" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-09-25T19:23:31.493106" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-09-25T20:28:59.075259" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>jimms</arg>
 <arg>${category}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-09-25T19:23:31.416384" elapsed="0.076744"/>
+<status status="PASS" start="2024-09-25T20:28:58.989531" elapsed="0.085762"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-09-25T19:23:31.493832" level="INFO">Argument types are:
+<msg time="2024-09-25T20:28:59.076000" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-09-25T19:23:31.493430" elapsed="0.000442"/>
+<status status="PASS" start="2024-09-25T20:28:59.075576" elapsed="0.000467"/>
 </kw>
 <arg>Should Be Equal As Numbers</arg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2024-09-25T19:23:31.493293" elapsed="0.000623"/>
+<status status="PASS" start="2024-09-25T20:28:59.075446" elapsed="0.000643"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:31.493990" elapsed="0.009104"/>
+<status status="PASS" start="2024-09-25T20:28:59.076167" elapsed="0.009790"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:31.508677" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.51955E2C4EE2E88996EF4C0FBB5CD47E.e.125")&gt;</msg>
+<msg time="2024-09-25T20:28:59.091444" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.D0D7D040F6E1E8EDB228348C4075028D.e.147")&gt;</msg>
 <var>${product_link}</var>
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:31.503237" elapsed="0.005474"/>
+<status status="PASS" start="2024-09-25T20:28:59.086150" elapsed="0.005341"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:31.514303" level="INFO">${link_text} = Samsung 55" Odyssey Ark 2nd Gen. G97NC, 165Hz kaareva 4K UHD -pelimonitori, musta (Tarjous! Norm. 3037,90€)</msg>
+<msg time="2024-09-25T20:28:59.096871" level="INFO">${link_text} = Samsung 55" Odyssey Ark 2nd Gen. G97NC, 165Hz kaareva 4K UHD -pelimonitori, musta (Tarjous! Norm. 3037,90€)</msg>
 <var>${link_text}</var>
 <arg>${product_link}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:31.508840" elapsed="0.005496"/>
+<status status="PASS" start="2024-09-25T20:28:59.091735" elapsed="0.005172"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-09-25T19:23:31.514571" level="INFO">Product link text is: Samsung 55" Odyssey Ark 2nd Gen. G97NC, 165Hz kaareva 4K UHD -pelimonitori, musta (Tarjous! Norm. 3037,90€)</msg>
+<msg time="2024-09-25T20:28:59.097193" level="INFO">Product link text is: Samsung 55" Odyssey Ark 2nd Gen. G97NC, 165Hz kaareva 4K UHD -pelimonitori, musta (Tarjous! Norm. 3037,90€)</msg>
 <arg>Product link text is: ${link_text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-25T19:23:31.514455" elapsed="0.000145"/>
+<status status="PASS" start="2024-09-25T20:28:59.097052" elapsed="0.000179"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:31.519161" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.51955E2C4EE2E88996EF4C0FBB5CD47E.e.126")&gt;</msg>
+<msg time="2024-09-25T20:28:59.101861" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.D0D7D040F6E1E8EDB228348C4075028D.e.148")&gt;</msg>
 <var>${add_to_cart}</var>
 <arg>${ADD_TO_CART_BUTTON_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:31.514667" elapsed="0.004520"/>
+<status status="PASS" start="2024-09-25T20:28:59.097313" elapsed="0.004578"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:31.522668" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.51955E2C4EE2E88996EF4C0FBB5CD47E.e.126")&gt;' is displayed.</msg>
+<msg time="2024-09-25T20:28:59.106320" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.D0D7D040F6E1E8EDB228348C4075028D.e.148")&gt;' is displayed.</msg>
 <arg>${add_to_cart}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:31.519288" elapsed="0.003441"/>
+<status status="PASS" start="2024-09-25T20:28:59.102019" elapsed="0.004388"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:33.523357" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:01.107516" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:31.522828" elapsed="2.000706"/>
+<status status="PASS" start="2024-09-25T20:28:59.106533" elapsed="2.001089"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:33.531444" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.51955E2C4EE2E88996EF4C0FBB5CD47E.e.140")&gt;</msg>
+<msg time="2024-09-25T20:29:01.112411" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.D0D7D040F6E1E8EDB228348C4075028D.e.162")&gt;</msg>
 <var>${price}</var>
 <arg>${PRODUCT_PRICE_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:33.523822" elapsed="0.007660"/>
+<status status="PASS" start="2024-09-25T20:29:01.107771" elapsed="0.004673"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2024-09-25T19:23:33.537122" level="INFO">Length is 8.</msg>
+<msg time="2024-09-25T20:29:01.117275" level="INFO">Length is 8.</msg>
 <arg>${price.text}</arg>
 <arg>msg=Product price is missing in ${category}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2024-09-25T19:23:33.531615" elapsed="0.005555"/>
+<status status="PASS" start="2024-09-25T20:29:01.112582" elapsed="0.004742"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:35.539954" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:03.118038" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:33.537282" elapsed="2.002922"/>
+<status status="PASS" start="2024-09-25T20:29:01.117449" elapsed="2.000723"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:35.632664" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Oheislaitteet_landing_page.png"&gt;&lt;img src="Oheislaitteet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-25T20:29:03.202572" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Oheislaitteet_landing_page.png"&gt;&lt;img src="Oheislaitteet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${category}_landing_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-25T19:23:35.540596" elapsed="0.092144"/>
+<status status="PASS" start="2024-09-25T20:29:03.118340" elapsed="0.084322"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:37.633713" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:05.203561" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:35.632861" elapsed="2.001097"/>
+<status status="PASS" start="2024-09-25T20:29:03.202822" elapsed="2.000831"/>
 </kw>
 <var name="${category}">Oheislaitteet</var>
-<status status="PASS" start="2024-09-25T19:23:30.958378" elapsed="6.675740"/>
+<status status="PASS" start="2024-09-25T20:28:58.711235" elapsed="6.492478"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-25T19:23:37.635168" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/SimRacing</msg>
+<msg time="2024-09-25T20:29:05.204112" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/SimRacing</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-25T19:23:37.634757" elapsed="0.000452"/>
+<status status="PASS" start="2024-09-25T20:29:05.203955" elapsed="0.000174"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:37.635876" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/SimRacing'</msg>
+<msg time="2024-09-25T20:29:05.204506" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/SimRacing'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-25T19:23:37.635394" elapsed="0.379635"/>
+<status status="PASS" start="2024-09-25T20:29:05.204231" elapsed="0.292827"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-09-25T19:23:38.086739" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/SimRacing 
+<msg time="2024-09-25T20:29:05.556580" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/SimRacing 
  path_url=/fi/Product/SimRacing 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
  body=None 
  </msg>
-<msg time="2024-09-25T19:23:38.087126" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/SimRacing 
+<msg time="2024-09-25T20:29:05.557048" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/SimRacing 
  status=200, reason=OK 
- headers={'Date': 'Wed, 25 Sep 2024 16:23:38 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=53jnogSxMmo8pJ%2BqErF0iKfrIZKxUcGKYBSaf1K%2BVm7AJCiCwN1gzedwoG%2FuI7q7KK5Tj1UY2sEnBsu72JPkYaoSupQ%2FRppL%2B9h15aetupwQj%2BQjTcuhr550vAfpHQ%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8c5c1f0a5f8d7b-HEL', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Wed, 25 Sep 2024 17:29:05 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=5UWMep0FSPbvJqn8cxiDHzcnKY7Nokk%2F0YTpFcGQHCw2uwqlwOFxKsM4o7%2FjWT%2BZrFmrwQGtlXZCzNYZrWNNOXXx37gzJsdkkRSrbQ1rt%2BVNwV5YHgnv3hJtMuDukA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8cbc018dd3d916-HEL', 'Content-Encoding': 'gzip'} 
  body=
 &lt;!DOCTYPE html&gt;
 &lt;html lang="fi"&gt;
@@ -1277,136 +1277,136 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
             toggle.addEventListener('click', () =&gt; {
                 const theme = toggle.getAt... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2024-09-25T19:23:38.087584" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-09-25T20:29:05.557337" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-09-25T19:23:38.087737" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-09-25T20:29:05.557526" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>jimms</arg>
 <arg>${category}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-09-25T19:23:38.015177" elapsed="0.072583"/>
+<status status="PASS" start="2024-09-25T20:29:05.497243" elapsed="0.060306"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-09-25T19:23:38.088553" level="INFO">Argument types are:
+<msg time="2024-09-25T20:29:05.558356" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-09-25T19:23:38.088074" elapsed="0.000528"/>
+<status status="PASS" start="2024-09-25T20:29:05.557898" elapsed="0.000504"/>
 </kw>
 <arg>Should Be Equal As Numbers</arg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2024-09-25T19:23:38.087925" elapsed="0.000732"/>
+<status status="PASS" start="2024-09-25T20:29:05.557749" elapsed="0.000703"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:38.088750" elapsed="0.011787"/>
+<status status="PASS" start="2024-09-25T20:29:05.558532" elapsed="0.009454"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:38.106684" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.0F626EAE81685DE9CA3A768D7B2AE9EC.e.166")&gt;</msg>
+<msg time="2024-09-25T20:29:05.587406" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.FA6BE19511A597BFDD7415508E2969E7.e.193")&gt;</msg>
 <var>${product_link}</var>
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:38.100697" elapsed="0.006028"/>
+<status status="PASS" start="2024-09-25T20:29:05.568184" elapsed="0.019262"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:38.111777" level="INFO">${link_text} = MOZA Racing 12" Round Wheel Mod for ES, musta/keltainen</msg>
+<msg time="2024-09-25T20:29:05.599884" level="INFO">${link_text} = MOZA Racing 12" Round Wheel Mod for ES, musta/keltainen</msg>
 <var>${link_text}</var>
 <arg>${product_link}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:38.106860" elapsed="0.004948"/>
+<status status="PASS" start="2024-09-25T20:29:05.587670" elapsed="0.012246"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-09-25T19:23:38.112047" level="INFO">Product link text is: MOZA Racing 12" Round Wheel Mod for ES, musta/keltainen</msg>
+<msg time="2024-09-25T20:29:05.600190" level="INFO">Product link text is: MOZA Racing 12" Round Wheel Mod for ES, musta/keltainen</msg>
 <arg>Product link text is: ${link_text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-25T19:23:38.111931" elapsed="0.000144"/>
+<status status="PASS" start="2024-09-25T20:29:05.600057" elapsed="0.000163"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:38.116392" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.0F626EAE81685DE9CA3A768D7B2AE9EC.e.167")&gt;</msg>
+<msg time="2024-09-25T20:29:05.604810" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.FA6BE19511A597BFDD7415508E2969E7.e.194")&gt;</msg>
 <var>${add_to_cart}</var>
 <arg>${ADD_TO_CART_BUTTON_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:38.112143" elapsed="0.004278"/>
+<status status="PASS" start="2024-09-25T20:29:05.600295" elapsed="0.004546"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:38.119968" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.0F626EAE81685DE9CA3A768D7B2AE9EC.e.167")&gt;' is displayed.</msg>
+<msg time="2024-09-25T20:29:05.608957" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.FA6BE19511A597BFDD7415508E2969E7.e.194")&gt;' is displayed.</msg>
 <arg>${add_to_cart}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:38.116538" elapsed="0.003493"/>
+<status status="PASS" start="2024-09-25T20:29:05.604966" elapsed="0.004076"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:40.122099" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:07.611252" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:38.120136" elapsed="2.002769"/>
+<status status="PASS" start="2024-09-25T20:29:05.609184" elapsed="2.002193"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:40.135796" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.0F626EAE81685DE9CA3A768D7B2AE9EC.e.182")&gt;</msg>
+<msg time="2024-09-25T20:29:07.615917" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.FA6BE19511A597BFDD7415508E2969E7.e.208")&gt;</msg>
 <var>${price}</var>
 <arg>${PRODUCT_PRICE_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:40.123735" elapsed="0.012132"/>
+<status status="PASS" start="2024-09-25T20:29:07.611529" elapsed="0.004418"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2024-09-25T19:23:40.145231" level="INFO">Length is 8.</msg>
+<msg time="2024-09-25T20:29:07.620313" level="INFO">Length is 8.</msg>
 <arg>${price.text}</arg>
 <arg>msg=Product price is missing in ${category}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2024-09-25T19:23:40.136127" elapsed="0.009183"/>
+<status status="PASS" start="2024-09-25T20:29:07.616058" elapsed="0.004300"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:42.146777" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:09.621789" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:40.145502" elapsed="2.001499"/>
+<status status="PASS" start="2024-09-25T20:29:07.620472" elapsed="2.001443"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:42.233608" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SimRacing_landing_page.png"&gt;&lt;img src="SimRacing_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-25T20:29:09.703862" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SimRacing_landing_page.png"&gt;&lt;img src="SimRacing_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${category}_landing_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-25T19:23:42.147465" elapsed="0.086234"/>
+<status status="PASS" start="2024-09-25T20:29:09.622074" elapsed="0.081871"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:44.235543" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:11.706284" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:42.233888" elapsed="2.002665"/>
+<status status="PASS" start="2024-09-25T20:29:09.704123" elapsed="2.002264"/>
 </kw>
 <var name="${category}">SimRacing</var>
-<status status="PASS" start="2024-09-25T19:23:37.634504" elapsed="6.602413"/>
+<status status="PASS" start="2024-09-25T20:29:05.203864" elapsed="6.502593"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-25T19:23:44.239168" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Verkkotuotteet</msg>
+<msg time="2024-09-25T20:29:11.707004" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Verkkotuotteet</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.238558" elapsed="0.000678"/>
+<status status="PASS" start="2024-09-25T20:29:11.706750" elapsed="0.000273"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:44.239739" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Verkkotuotteet'</msg>
+<msg time="2024-09-25T20:29:11.707215" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Verkkotuotteet'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.239484" elapsed="0.233644"/>
+<status status="PASS" start="2024-09-25T20:29:11.707100" elapsed="0.327510"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-09-25T19:23:44.582876" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Verkkotuotteet 
+<msg time="2024-09-25T20:29:12.088814" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Verkkotuotteet 
  path_url=/fi/Product/Verkkotuotteet 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
  body=None 
  </msg>
-<msg time="2024-09-25T19:23:44.583234" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Verkkotuotteet 
+<msg time="2024-09-25T20:29:12.089278" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Verkkotuotteet 
  status=200, reason=OK 
- headers={'Date': 'Wed, 25 Sep 2024 16:23:44 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=XXU2PS88Pz%2FfSiQ9l1M0%2FmvPqXCt4YRcBPhqAtZNQ1VskRy7hFJIQJit%2Fkw2zHRwqiyS5LHetodg03C9xIedNf0KV%2BbH53ORyGQobwX%2Bw1%2BFnlADvSfPFur2mjbGFA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8c5c476fd58d7b-HEL', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Wed, 25 Sep 2024 17:29:12 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=1YXoOY7qpGgRC7il1I%2FYm972n%2BVUKxSPBpM6HcnhqUgc9gKiblDKfWvuEFVhRlbqubEmwdjGLz9LLNQDn9uv51tt9KBG3Sd%2BYxrQ9%2BvNKbhfzZaxZ4BUDnsv%2Bc88kg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8cbc2a68ecd916-HEL', 'Content-Encoding': 'gzip'} 
  body=
 &lt;!DOCTYPE html&gt;
 &lt;html lang="fi"&gt;
@@ -1619,136 +1619,136 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
             toggle.addEventListener('click', () =&gt; {
                 const theme = toggle.getAttribute('data-bs-theme-va... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2024-09-25T19:23:44.583459" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-09-25T20:29:12.089510" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-09-25T19:23:44.583580" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-09-25T20:29:12.089620" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>jimms</arg>
 <arg>${category}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.473276" elapsed="0.110326"/>
+<status status="PASS" start="2024-09-25T20:29:12.034760" elapsed="0.054881"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-09-25T19:23:44.584500" level="INFO">Argument types are:
+<msg time="2024-09-25T20:29:12.090290" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.583883" elapsed="0.000677"/>
+<status status="PASS" start="2024-09-25T20:29:12.089903" elapsed="0.000427"/>
 </kw>
 <arg>Should Be Equal As Numbers</arg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.583754" elapsed="0.000875"/>
+<status status="PASS" start="2024-09-25T20:29:12.089787" elapsed="0.000587"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.584740" elapsed="0.009700"/>
+<status status="PASS" start="2024-09-25T20:29:12.090447" elapsed="0.012232"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:44.600085" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.7302D4054C0B3EA98E1FA21D0E6A477C.e.253")&gt;</msg>
+<msg time="2024-09-25T20:29:12.108531" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.2FC6A925B84FCE9211A53503B8AF3240.e.239")&gt;</msg>
 <var>${product_link}</var>
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.594594" elapsed="0.005522"/>
+<status status="PASS" start="2024-09-25T20:29:12.102868" elapsed="0.005698"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:44.605186" level="INFO">${link_text} = Asus 4G-AX56, Cat.6 300Mbps Dual-Band WiFi 6 LTE-reititin, musta</msg>
+<msg time="2024-09-25T20:29:12.114465" level="INFO">${link_text} = Asus 4G-AX56, Cat.6 300Mbps Dual-Band WiFi 6 LTE-reititin, musta</msg>
 <var>${link_text}</var>
 <arg>${product_link}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.600235" elapsed="0.004984"/>
+<status status="PASS" start="2024-09-25T20:29:12.108721" elapsed="0.005784"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-09-25T19:23:44.605502" level="INFO">Product link text is: Asus 4G-AX56, Cat.6 300Mbps Dual-Band WiFi 6 LTE-reititin, musta</msg>
+<msg time="2024-09-25T20:29:12.114891" level="INFO">Product link text is: Asus 4G-AX56, Cat.6 300Mbps Dual-Band WiFi 6 LTE-reititin, musta</msg>
 <arg>Product link text is: ${link_text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.605360" elapsed="0.000173"/>
+<status status="PASS" start="2024-09-25T20:29:12.114717" elapsed="0.000210"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:44.610528" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.7302D4054C0B3EA98E1FA21D0E6A477C.e.254")&gt;</msg>
+<msg time="2024-09-25T20:29:12.119312" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.2FC6A925B84FCE9211A53503B8AF3240.e.240")&gt;</msg>
 <var>${add_to_cart}</var>
 <arg>${ADD_TO_CART_BUTTON_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.605610" elapsed="0.004951"/>
+<status status="PASS" start="2024-09-25T20:29:12.115012" elapsed="0.004346"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:44.613909" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.7302D4054C0B3EA98E1FA21D0E6A477C.e.254")&gt;' is displayed.</msg>
+<msg time="2024-09-25T20:29:12.123646" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.2FC6A925B84FCE9211A53503B8AF3240.e.240")&gt;' is displayed.</msg>
 <arg>${add_to_cart}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.610689" elapsed="0.003278"/>
+<status status="PASS" start="2024-09-25T20:29:12.119512" elapsed="0.004226"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:46.615644" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:14.124591" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:44.614066" elapsed="2.002249"/>
+<status status="PASS" start="2024-09-25T20:29:12.123913" elapsed="2.000777"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:46.630804" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.7302D4054C0B3EA98E1FA21D0E6A477C.e.263")&gt;</msg>
+<msg time="2024-09-25T20:29:14.129130" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.2FC6A925B84FCE9211A53503B8AF3240.e.249")&gt;</msg>
 <var>${price}</var>
 <arg>${PRODUCT_PRICE_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:46.617257" elapsed="0.013615"/>
+<status status="PASS" start="2024-09-25T20:29:14.124881" elapsed="0.004280"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2024-09-25T19:23:46.640039" level="INFO">Length is 8.</msg>
+<msg time="2024-09-25T20:29:14.133795" level="INFO">Length is 8.</msg>
 <arg>${price.text}</arg>
 <arg>msg=Product price is missing in ${category}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2024-09-25T19:23:46.631124" elapsed="0.008995"/>
+<status status="PASS" start="2024-09-25T20:29:14.129303" elapsed="0.004536"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:48.641021" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:16.135786" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:46.640304" elapsed="2.000999"/>
+<status status="PASS" start="2024-09-25T20:29:14.133954" elapsed="2.001938"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:48.724295" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Verkkotuotteet_landing_page.png"&gt;&lt;img src="Verkkotuotteet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-25T20:29:16.207135" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Verkkotuotteet_landing_page.png"&gt;&lt;img src="Verkkotuotteet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${category}_landing_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-25T19:23:48.641744" elapsed="0.082631"/>
+<status status="PASS" start="2024-09-25T20:29:16.136088" elapsed="0.071180"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:50.724886" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:18.208139" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:48.724502" elapsed="2.000636"/>
+<status status="PASS" start="2024-09-25T20:29:16.207415" elapsed="2.000820"/>
 </kw>
 <var name="${category}">Verkkotuotteet</var>
-<status status="PASS" start="2024-09-25T19:23:44.237775" elapsed="6.487520"/>
+<status status="PASS" start="2024-09-25T20:29:11.706646" elapsed="6.501677"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-25T19:23:50.726388" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tarvikkeet</msg>
+<msg time="2024-09-25T20:29:18.208858" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tarvikkeet</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-25T19:23:50.725968" elapsed="0.000461"/>
+<status status="PASS" start="2024-09-25T20:29:18.208629" elapsed="0.000248"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:50.726811" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tarvikkeet'</msg>
+<msg time="2024-09-25T20:29:18.209059" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tarvikkeet'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-25T19:23:50.726605" elapsed="0.361665"/>
+<status status="PASS" start="2024-09-25T20:29:18.208960" elapsed="0.384573"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-09-25T19:23:51.183671" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Tarvikkeet 
+<msg time="2024-09-25T20:29:18.666383" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Tarvikkeet 
  path_url=/fi/Product/Tarvikkeet 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
  body=None 
  </msg>
-<msg time="2024-09-25T19:23:51.184066" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Tarvikkeet 
+<msg time="2024-09-25T20:29:18.666782" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Tarvikkeet 
  status=200, reason=OK 
- headers={'Date': 'Wed, 25 Sep 2024 16:23:51 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=XAPwoyWYPspcblpP4bCMXI5BlPJeadQZTN1h90uh3VO9xDY1fR9I3Fgehf8PdPnRdOdFSbf%2FK8dOVo14YldkhPZCPm2ofEy1ZTr2z9I45K%2B%2BYQRe3XhFxbcw3j3nMg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8c5c70bcee8d7b-HEL', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Wed, 25 Sep 2024 17:29:18 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=IFT7u6he%2BvF9ASVWnCQnnSYGt3lCdigxpn%2FCqf3UVwfb3SFtmWdzAiYCsfhq7uIY0Orby1IJvU5KSDNWEAaM%2B89Ve5AgAkilP9haRxUmiO6s9r2wKmeS7kKEXvKMHQ%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8cbc535bf5d916-HEL', 'Content-Encoding': 'gzip'} 
  body=
 &lt;!DOCTYPE html&gt;
 &lt;html lang="fi"&gt;
@@ -1961,136 +1961,136 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
             toggle.addEventListener('click', () =&gt; {
                 const theme... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2024-09-25T19:23:51.184291" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-09-25T20:29:18.667003" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-09-25T19:23:51.184463" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-09-25T20:29:18.667154" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>jimms</arg>
 <arg>${category}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-09-25T19:23:51.088426" elapsed="0.096058"/>
+<status status="PASS" start="2024-09-25T20:29:18.593736" elapsed="0.073446"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-09-25T19:23:51.185097" level="INFO">Argument types are:
+<msg time="2024-09-25T20:29:18.668009" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-09-25T19:23:51.184731" elapsed="0.000403"/>
+<status status="PASS" start="2024-09-25T20:29:18.667496" elapsed="0.000556"/>
 </kw>
 <arg>Should Be Equal As Numbers</arg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2024-09-25T19:23:51.184615" elapsed="0.000560"/>
+<status status="PASS" start="2024-09-25T20:29:18.667358" elapsed="0.000742"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:51.185245" elapsed="0.010083"/>
+<status status="PASS" start="2024-09-25T20:29:18.668178" elapsed="0.010881"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:51.200348" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.FAD286E1E5264F44236A1894A0BEC550.e.288")&gt;</msg>
+<msg time="2024-09-25T20:29:18.684265" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.8BE4180B45BC7328960748823F74427B.e.269")&gt;</msg>
 <var>${product_link}</var>
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:51.195457" elapsed="0.004943"/>
+<status status="PASS" start="2024-09-25T20:29:18.679248" elapsed="0.005059"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:51.205631" level="INFO">${link_text} = Fractal Design Refine Mesh Dark -pelituoli, tumma</msg>
+<msg time="2024-09-25T20:29:18.689457" level="INFO">${link_text} = Fractal Design Refine Mesh Dark -pelituoli, tumma</msg>
 <var>${link_text}</var>
 <arg>${product_link}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:51.200532" elapsed="0.005131"/>
+<status status="PASS" start="2024-09-25T20:29:18.684522" elapsed="0.004995"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-09-25T19:23:51.205934" level="INFO">Product link text is: Fractal Design Refine Mesh Dark -pelituoli, tumma</msg>
+<msg time="2024-09-25T20:29:18.689823" level="INFO">Product link text is: Fractal Design Refine Mesh Dark -pelituoli, tumma</msg>
 <arg>Product link text is: ${link_text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-25T19:23:51.205803" elapsed="0.000158"/>
+<status status="PASS" start="2024-09-25T20:29:18.689679" elapsed="0.000176"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:51.210168" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.FAD286E1E5264F44236A1894A0BEC550.e.289")&gt;</msg>
+<msg time="2024-09-25T20:29:18.694218" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.8BE4180B45BC7328960748823F74427B.e.270")&gt;</msg>
 <var>${add_to_cart}</var>
 <arg>${ADD_TO_CART_BUTTON_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:51.206027" elapsed="0.004166"/>
+<status status="PASS" start="2024-09-25T20:29:18.689927" elapsed="0.004351"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:51.213794" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.FAD286E1E5264F44236A1894A0BEC550.e.289")&gt;' is displayed.</msg>
+<msg time="2024-09-25T20:29:18.698502" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.8BE4180B45BC7328960748823F74427B.e.270")&gt;' is displayed.</msg>
 <arg>${add_to_cart}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:51.210291" elapsed="0.003571"/>
+<status status="PASS" start="2024-09-25T20:29:18.694406" elapsed="0.004167"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:53.215413" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:20.700231" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:51.213970" elapsed="2.001553"/>
+<status status="PASS" start="2024-09-25T20:29:18.698685" elapsed="2.001642"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:53.220130" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.FAD286E1E5264F44236A1894A0BEC550.e.304")&gt;</msg>
+<msg time="2024-09-25T20:29:20.704835" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.8BE4180B45BC7328960748823F74427B.e.285")&gt;</msg>
 <var>${price}</var>
 <arg>${PRODUCT_PRICE_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:53.215673" elapsed="0.004483"/>
+<status status="PASS" start="2024-09-25T20:29:20.700473" elapsed="0.004392"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2024-09-25T19:23:53.224509" level="INFO">Length is 8.</msg>
+<msg time="2024-09-25T20:29:20.709851" level="INFO">Length is 8.</msg>
 <arg>${price.text}</arg>
 <arg>msg=Product price is missing in ${category}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2024-09-25T19:23:53.220272" elapsed="0.004277"/>
+<status status="PASS" start="2024-09-25T20:29:20.704975" elapsed="0.004921"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:55.225075" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:22.711527" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:53.224656" elapsed="2.000701"/>
+<status status="PASS" start="2024-09-25T20:29:20.710033" elapsed="2.001604"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:55.312363" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Tarvikkeet_landing_page.png"&gt;&lt;img src="Tarvikkeet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-25T20:29:22.781739" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Tarvikkeet_landing_page.png"&gt;&lt;img src="Tarvikkeet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${category}_landing_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-25T19:23:55.225858" elapsed="0.086587"/>
+<status status="PASS" start="2024-09-25T20:29:22.711809" elapsed="0.070017"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:57.313372" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:24.782249" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:55.312571" elapsed="2.001420"/>
+<status status="PASS" start="2024-09-25T20:29:22.781960" elapsed="2.000382"/>
 </kw>
 <var name="${category}">Tarvikkeet</var>
-<status status="PASS" start="2024-09-25T19:23:50.725717" elapsed="6.588646"/>
+<status status="PASS" start="2024-09-25T20:29:18.208530" elapsed="6.573872"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-25T19:23:57.317203" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Erikoistuotteet</msg>
+<msg time="2024-09-25T20:29:24.782857" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Erikoistuotteet</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.316243" elapsed="0.001041"/>
+<status status="PASS" start="2024-09-25T20:29:24.782673" elapsed="0.000202"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:57.317941" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Erikoistuotteet'</msg>
+<msg time="2024-09-25T20:29:24.783053" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Erikoistuotteet'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.317615" elapsed="0.315300"/>
+<status status="PASS" start="2024-09-25T20:29:24.782955" elapsed="0.385883"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-09-25T19:23:57.727980" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Erikoistuotteet 
+<msg time="2024-09-25T20:29:25.218487" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Erikoistuotteet 
  path_url=/fi/Product/Erikoistuotteet 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
  body=None 
  </msg>
-<msg time="2024-09-25T19:23:57.728332" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Erikoistuotteet 
+<msg time="2024-09-25T20:29:25.218864" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Erikoistuotteet 
  status=200, reason=OK 
- headers={'Date': 'Wed, 25 Sep 2024 16:23:57 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=eqLho4cyzoXQoUQD%2F7a3rfnzedgyr26oI7ybd9R66iZk9J9xLguRwf4qxh6zS8B%2B%2FdVY4XXZuvX7Ngd%2BoPlyCKuS5YYG%2BcA%2BoqlIAOWW3qWHYDrEL3JUarWAgynlEw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8c5c99ad018d7b-HEL', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Wed, 25 Sep 2024 17:29:25 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=SOv14X7nY9hhOAhmK7ct9JNfy%2FYa0Xbnz5196DKTFFHjND5ylhB4BicmhVTHHy6Eu58G2zPa0bYIOmpqfNwPW%2Fb6Q2lm4xfCEfjQoNHwRS3N4wj2ISDmQpCjo4GfTA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8cbc7c78c6d916-HEL', 'Content-Encoding': 'gzip'} 
  body=
 &lt;!DOCTYPE html&gt;
 &lt;html lang="fi"&gt;
@@ -2300,136 +2300,136 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
    
     window.addEventListener('DOMContentLoade... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2024-09-25T19:23:57.728556" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-09-25T20:29:25.219129" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-09-25T19:23:57.728718" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-09-25T20:29:25.219291" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>jimms</arg>
 <arg>${category}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.633064" elapsed="0.095676"/>
+<status status="PASS" start="2024-09-25T20:29:25.169026" elapsed="0.050294"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-09-25T19:23:57.729446" level="INFO">Argument types are:
+<msg time="2024-09-25T20:29:25.220057" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.729027" elapsed="0.000463"/>
+<status status="PASS" start="2024-09-25T20:29:25.219632" elapsed="0.000486"/>
 </kw>
 <arg>Should Be Equal As Numbers</arg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.728896" elapsed="0.000642"/>
+<status status="PASS" start="2024-09-25T20:29:25.219495" elapsed="0.000674"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.729620" elapsed="0.009560"/>
+<status status="PASS" start="2024-09-25T20:29:25.220336" elapsed="0.015526"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:57.745195" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.BFB3CC2FF183B1292D33735723C1FC08.e.378")&gt;</msg>
+<msg time="2024-09-25T20:29:25.241847" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.A904999638159CD2AA4092DCC0BC22B1.e.316")&gt;</msg>
 <var>${product_link}</var>
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.739327" elapsed="0.005902"/>
+<status status="PASS" start="2024-09-25T20:29:25.236074" elapsed="0.005812"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:57.749844" level="INFO">${link_text} = Alphacool NexXxoS UT60 Full Copper 480 jäähdytin</msg>
+<msg time="2024-09-25T20:29:25.248092" level="INFO">${link_text} = Alphacool NexXxoS UT60 Full Copper 480 jäähdytin</msg>
 <var>${link_text}</var>
 <arg>${product_link}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.745370" elapsed="0.004503"/>
+<status status="PASS" start="2024-09-25T20:29:25.242079" elapsed="0.006043"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-09-25T19:23:57.750099" level="INFO">Product link text is: Alphacool NexXxoS UT60 Full Copper 480 jäähdytin</msg>
+<msg time="2024-09-25T20:29:25.248368" level="INFO">Product link text is: Alphacool NexXxoS UT60 Full Copper 480 jäähdytin</msg>
 <arg>Product link text is: ${link_text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.749986" elapsed="0.000140"/>
+<status status="PASS" start="2024-09-25T20:29:25.248249" elapsed="0.000146"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:57.754854" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.BFB3CC2FF183B1292D33735723C1FC08.e.379")&gt;</msg>
+<msg time="2024-09-25T20:29:25.253014" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.A904999638159CD2AA4092DCC0BC22B1.e.317")&gt;</msg>
 <var>${add_to_cart}</var>
 <arg>${ADD_TO_CART_BUTTON_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.750191" elapsed="0.004694"/>
+<status status="PASS" start="2024-09-25T20:29:25.248461" elapsed="0.004643"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:57.758875" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.BFB3CC2FF183B1292D33735723C1FC08.e.379")&gt;' is displayed.</msg>
+<msg time="2024-09-25T20:29:25.257836" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.A904999638159CD2AA4092DCC0BC22B1.e.317")&gt;' is displayed.</msg>
 <arg>${add_to_cart}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.755016" elapsed="0.003971"/>
+<status status="PASS" start="2024-09-25T20:29:25.253303" elapsed="0.004668"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:23:59.761059" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:27.259345" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:57.759181" elapsed="2.002481"/>
+<status status="PASS" start="2024-09-25T20:29:25.258134" elapsed="2.001348"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:23:59.774518" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.BFB3CC2FF183B1292D33735723C1FC08.e.393")&gt;</msg>
+<msg time="2024-09-25T20:29:27.264121" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.A904999638159CD2AA4092DCC0BC22B1.e.330")&gt;</msg>
 <var>${price}</var>
 <arg>${PRODUCT_PRICE_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:23:59.762495" elapsed="0.012083"/>
+<status status="PASS" start="2024-09-25T20:29:27.259656" elapsed="0.004494"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2024-09-25T19:23:59.783571" level="INFO">Length is 7.</msg>
+<msg time="2024-09-25T20:29:27.278665" level="INFO">Length is 7.</msg>
 <arg>${price.text}</arg>
 <arg>msg=Product price is missing in ${category}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2024-09-25T19:23:59.774800" elapsed="0.008866"/>
+<status status="PASS" start="2024-09-25T20:29:27.264294" elapsed="0.014436"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:24:01.785325" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:29.280125" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:23:59.783870" elapsed="2.001574"/>
+<status status="PASS" start="2024-09-25T20:29:27.278918" elapsed="2.001303"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:24:01.867328" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Erikoistuotteet_landing_page.png"&gt;&lt;img src="Erikoistuotteet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-25T20:29:29.365950" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Erikoistuotteet_landing_page.png"&gt;&lt;img src="Erikoistuotteet_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${category}_landing_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-25T19:24:01.785647" elapsed="0.081759"/>
+<status status="PASS" start="2024-09-25T20:29:29.280381" elapsed="0.085654"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:24:03.868718" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:31.367520" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:24:01.867532" elapsed="2.001643"/>
+<status status="PASS" start="2024-09-25T20:29:29.366190" elapsed="2.001430"/>
 </kw>
 <var name="${category}">Erikoistuotteet</var>
-<status status="PASS" start="2024-09-25T19:23:57.315569" elapsed="6.553789"/>
+<status status="PASS" start="2024-09-25T20:29:24.782568" elapsed="6.585111"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-25T19:24:03.870558" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Ohjelmistot</msg>
+<msg time="2024-09-25T20:29:31.368087" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Ohjelmistot</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-25T19:24:03.870087" elapsed="0.000521"/>
+<status status="PASS" start="2024-09-25T20:29:31.367925" elapsed="0.000180"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:24:03.871044" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Ohjelmistot'</msg>
+<msg time="2024-09-25T20:29:31.368266" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Ohjelmistot'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-25T19:24:03.870811" elapsed="0.368082"/>
+<status status="PASS" start="2024-09-25T20:29:31.368179" elapsed="0.252268"/>
 </kw>
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-09-25T19:24:04.291280" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Ohjelmistot 
+<msg time="2024-09-25T20:29:31.759882" level="INFO">GET Request : url=https://www.jimms.fi/fi/Product/Ohjelmistot 
  path_url=/fi/Product/Ohjelmistot 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'JW.CurrentUICulture=fi'} 
  body=None 
  </msg>
-<msg time="2024-09-25T19:24:04.291591" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Ohjelmistot 
+<msg time="2024-09-25T20:29:31.760251" level="INFO">GET Response : url=https://www.jimms.fi/fi/Product/Ohjelmistot 
  status=200, reason=OK 
- headers={'Date': 'Wed, 25 Sep 2024 16:24:04 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Vr9gqaxFWqGmB4J9ZqYiuAqa6rKWo2UjVZ%2B9zj3M%2BErWNaG9vue1CaMlBwUBjMppwLQQmRHcyco2Vp6JgH3dW45lJ4EkmgeHWLbIBADACKa8yyzaBHTFDHbDYOE4UQ%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8c5cc2ed558d7b-HEL', 'Content-Encoding': 'gzip'} 
+ headers={'Date': 'Wed, 25 Sep 2024 17:29:31 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Cache-Control': 'private,private', 'access-control-allow-origin': 'https://www.jimms.fi', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=HpGbQZDs5QvJRTSAZ0unmXOmyY09Zq%2Bol4HUln46t%2BgDbMQ0i8eaUS08t%2F4JbiLPZFO1WmMbh6FlNXr18Jcwmy046pEROtSbmTov8E975BTPw9utQ7qDkAsk5tpmqA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '8c8cbca4ca40d916-HEL', 'Content-Encoding': 'gzip'} 
  body=
 &lt;!DOCTYPE html&gt;
 &lt;html lang="fi"&gt;
@@ -2641,125 +2641,125 @@ height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;&l
         document.querySelectorAll('[data-bs-theme-value]').forEach(toggle =&gt; {
             toggle.addEventListener('c... (set the log level to DEBUG or TRACE to see the full content) 
  </msg>
-<msg time="2024-09-25T19:24:04.291801" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-09-25T20:29:31.760490" level="INFO">/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/categories/venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1099: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.jimms.fi'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-09-25T19:24:04.291956" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-09-25T20:29:31.760606" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>jimms</arg>
 <arg>${category}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-09-25T19:24:04.239034" elapsed="0.052943"/>
+<status status="PASS" start="2024-09-25T20:29:31.620754" elapsed="0.139873"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-09-25T19:24:04.292738" level="INFO">Argument types are:
+<msg time="2024-09-25T20:29:31.761453" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-09-25T19:24:04.292325" elapsed="0.000457"/>
+<status status="PASS" start="2024-09-25T20:29:31.760977" elapsed="0.000522"/>
 </kw>
 <arg>Should Be Equal As Numbers</arg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <arg>msg=Landing page for ${category} did not return a 200 status.</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2024-09-25T19:24:04.292160" elapsed="0.000670"/>
+<status status="PASS" start="2024-09-25T20:29:31.760825" elapsed="0.000724"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:24:04.292909" elapsed="0.009133"/>
+<status status="PASS" start="2024-09-25T20:29:31.761633" elapsed="0.009190"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:24:04.307120" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.12337D79BF12E7537047512E06A4851C.e.454")&gt;</msg>
+<msg time="2024-09-25T20:29:31.775908" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.85C0B5D2D6039B3AF33451ACD643C656.e.361")&gt;</msg>
 <var>${product_link}</var>
 <arg>${PRODUCT_LINK_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:24:04.302175" elapsed="0.004976"/>
+<status status="PASS" start="2024-09-25T20:29:31.770982" elapsed="0.004957"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:24:04.313593" level="INFO">${link_text} = PlayStation Studios Astro Bot (PS5)</msg>
+<msg time="2024-09-25T20:29:31.780459" level="INFO">${link_text} = PlayStation Studios Astro Bot (PS5)</msg>
 <var>${link_text}</var>
 <arg>${product_link}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:24:04.307267" elapsed="0.006358"/>
+<status status="PASS" start="2024-09-25T20:29:31.776077" elapsed="0.004420"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-09-25T19:24:04.313892" level="INFO">Product link text is: PlayStation Studios Astro Bot (PS5)</msg>
+<msg time="2024-09-25T20:29:31.780789" level="INFO">Product link text is: PlayStation Studios Astro Bot (PS5)</msg>
 <arg>Product link text is: ${link_text}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-25T19:24:04.313765" elapsed="0.000154"/>
+<status status="PASS" start="2024-09-25T20:29:31.780646" elapsed="0.000174"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:24:04.318790" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.12337D79BF12E7537047512E06A4851C.e.455")&gt;</msg>
+<msg time="2024-09-25T20:29:31.785683" level="INFO">${add_to_cart} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.85C0B5D2D6039B3AF33451ACD643C656.e.362")&gt;</msg>
 <var>${add_to_cart}</var>
 <arg>${ADD_TO_CART_BUTTON_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:24:04.313985" elapsed="0.004836"/>
+<status status="PASS" start="2024-09-25T20:29:31.780898" elapsed="0.004821"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:24:04.322308" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.12337D79BF12E7537047512E06A4851C.e.455")&gt;' is displayed.</msg>
+<msg time="2024-09-25T20:29:31.789507" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.85C0B5D2D6039B3AF33451ACD643C656.e.362")&gt;' is displayed.</msg>
 <arg>${add_to_cart}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-25T19:24:04.318942" elapsed="0.003438"/>
+<status status="PASS" start="2024-09-25T20:29:31.785918" elapsed="0.003654"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:24:06.323355" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:33.790364" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:24:04.322515" elapsed="2.001848"/>
+<status status="PASS" start="2024-09-25T20:29:31.789684" elapsed="2.000771"/>
 </kw>
 <kw name="Get WebElement" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:24:06.338979" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="81f4480067a80da661fe8236ef59ae00", element="f.1FFAC867CC1B15AED75D8AF592FCE884.d.12337D79BF12E7537047512E06A4851C.e.464")&gt;</msg>
+<msg time="2024-09-25T20:29:33.795070" level="INFO">${price} = &lt;selenium.webdriver.remote.webelement.WebElement (session="8b78dd0755cc3ced413e8e029752f655", element="f.7AB0B496DAF215641575FFFD12DC36C2.d.85C0B5D2D6039B3AF33451ACD643C656.e.372")&gt;</msg>
 <var>${price}</var>
 <arg>${PRODUCT_PRICE_SELECTOR}</arg>
 <doc>Returns the first WebElement matching the given ``locator``.</doc>
-<status status="PASS" start="2024-09-25T19:24:06.326273" elapsed="0.012782"/>
+<status status="PASS" start="2024-09-25T20:29:33.790597" elapsed="0.004499"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2024-09-25T19:24:06.348391" level="INFO">Length is 7.</msg>
+<msg time="2024-09-25T20:29:33.799689" level="INFO">Length is 7.</msg>
 <arg>${price.text}</arg>
 <arg>msg=Product price is missing in ${category}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2024-09-25T19:24:06.339341" elapsed="0.009132"/>
+<status status="PASS" start="2024-09-25T20:29:33.795201" elapsed="0.004536"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:24:08.350873" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:35.801620" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:24:06.348660" elapsed="2.002487"/>
+<status status="PASS" start="2024-09-25T20:29:33.799889" elapsed="2.001838"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-25T19:24:08.443395" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Ohjelmistot_landing_page.png"&gt;&lt;img src="Ohjelmistot_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-25T20:29:35.874084" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Ohjelmistot_landing_page.png"&gt;&lt;img src="Ohjelmistot_landing_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${category}_landing_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-25T19:24:08.351594" elapsed="0.091884"/>
+<status status="PASS" start="2024-09-25T20:29:35.801878" elapsed="0.072301"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-25T19:24:10.445709" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T20:29:37.875411" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-25T19:24:08.443607" elapsed="2.002837"/>
+<status status="PASS" start="2024-09-25T20:29:35.874325" elapsed="2.001182"/>
 </kw>
 <var name="${category}">Ohjelmistot</var>
-<status status="PASS" start="2024-09-25T19:24:03.869796" elapsed="6.577581"/>
+<status status="PASS" start="2024-09-25T20:29:31.367833" elapsed="6.507734"/>
 </iter>
 <var>${category}</var>
 <value>@{CATEGORIES}</value>
-<status status="PASS" start="2024-09-25T19:23:17.965653" elapsed="52.481910"/>
+<status status="PASS" start="2024-09-25T20:28:45.644570" elapsed="52.231033"/>
 </for>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-25T19:24:10.448497" elapsed="0.124590"/>
+<status status="PASS" start="2024-09-25T20:29:37.875799" elapsed="0.119506"/>
 </kw>
 <doc>This test case verifies that all product categories return a valid landing page, opens the browser to display each page, and takes a screenshot.</doc>
-<status status="PASS" start="2024-09-25T19:23:15.496811" elapsed="55.076453"/>
+<status status="PASS" start="2024-09-25T20:28:42.845229" elapsed="55.150261"/>
 </test>
-<status status="PASS" start="2024-09-25T19:23:15.378936" elapsed="55.194594"/>
+<status status="PASS" start="2024-09-25T20:28:42.562762" elapsed="55.433036"/>
 </suite>
 <statistics>
 <total>
