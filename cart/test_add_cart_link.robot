@@ -14,6 +14,8 @@ ${BASE_URL}    https://www.jimms.fi/fi/Product/
 ${BROWSER}    Chrome
 ${SLEEP_TIME}    2s  
 
+#!SECTION - add loop through each product
+
 *** Test Cases ***
 Verify All Product Categories Have Landing Pages And Add To Cart Button
     [Documentation]    This test case verifies that all product categories return a valid landing page and contain the addto-cart-wrapper.
