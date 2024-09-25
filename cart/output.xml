@@ -1,274 +1,994 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.10.12 on darwin)" generated="2024-09-24T22:37:13.493434" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.10.12 on darwin)" generated="2024-09-25T19:48:07.773354" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Add Cart Link" source="/Users/dandev947366/Desktop/HAMK-8-2024/Software-Testing/SWT-Team4/SWT-Team4/Jimms-SWT/cart/test_add_cart_link.robot">
-<test id="s1-t1" name="Verify All Product Categories Have Landing Pages And Add To Cart Button" line="18">
+<test id="s1-t1" name="Verify Add To Cart Button for Selected Products" line="20">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-09-24T22:37:20.382029" level="INFO">Creating Session using : alias=jimms, url=https://www.jimms.fi/fi/Product/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-09-25T19:48:07.933830" level="INFO">Creating Session using : alias=jimms, url=https://www.jimms.fi/fi/Product/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>jimms</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-09-24T22:37:20.381904" elapsed="0.000239"/>
+<status status="PASS" start="2024-09-25T19:48:07.933727" elapsed="0.000212"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:20.382401" level="INFO">Opening browser 'Chrome' to base url 'https://www.jimms.fi/fi/Product/'.</msg>
+<msg time="2024-09-25T19:48:07.934171" level="INFO">Opening browser 'Chrome' to base url 'https://www.jimms.fi/fi/Product/'.</msg>
 <arg>${BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-24T22:37:20.382274" elapsed="5.143007"/>
+<status status="PASS" start="2024-09-25T19:48:07.934049" elapsed="12.899471"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T22:37:25.526116" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tietokoneet</msg>
+<msg time="2024-09-25T19:48:20.834736" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tietokoneet</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T22:37:25.525955" elapsed="0.000179"/>
+<status status="PASS" start="2024-09-25T19:48:20.834480" elapsed="0.000282"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:25.526305" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tietokoneet'</msg>
+<msg time="2024-09-25T19:48:20.834984" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tietokoneet'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-24T22:37:25.526213" elapsed="0.494991"/>
+<status status="PASS" start="2024-09-25T19:48:20.834866" elapsed="2.296035"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-24T22:37:28.021730" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T19:48:25.133617" level="INFO">Slept 2 seconds.</msg>
 <arg>${SLEEP_TIME}</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-24T22:37:26.021450" elapsed="2.000396"/>
+<status status="PASS" start="2024-09-25T19:48:23.131113" elapsed="2.002599"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.product-list--items</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:48:25.133877" elapsed="0.011602"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:25.151664" level="INFO">${product_links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.82A3EAF021AD0E9330B68EF3A715D094.e.85")&gt;, &lt;selenium.webdriv...</msg>
+<var>${product_links}</var>
+<arg>${PRODUCT_LINK_SELECTOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:48:25.145611" elapsed="0.006086"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:48:25.152119" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.82A3EAF021AD0E9330B68EF3A715D094.e.85")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:48:25.151974" elapsed="0.000164"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:25.152334" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.82A3EAF021AD0E9330B68EF3A715D094.e.85")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:48:25.152219" elapsed="2.266738"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:29.420373" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:27.419097" elapsed="2.001521"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:28.043478" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
-<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
-<arg>msg=Add to cart button not found for ${category}.</arg>
+<msg time="2024-09-25T19:48:29.451357" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T22:37:28.022002" elapsed="0.021549"/>
+<status status="PASS" start="2024-09-25T19:48:29.421018" elapsed="0.030434"/>
 </kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:48:29.451617" elapsed="0.008434"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:31.462607" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:29.460215" elapsed="2.002677"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-09-25T19:48:25.151893" elapsed="6.311186"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:48:31.464238" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.82A3EAF021AD0E9330B68EF3A715D094.e.86")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:48:31.463749" elapsed="0.000543"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:31.464894" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.82A3EAF021AD0E9330B68EF3A715D094.e.86")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:48:31.464519" elapsed="0.444214"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:33.910682" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:31.908876" elapsed="2.003458"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:33.947570" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:48:33.914851" elapsed="0.032884"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:48:33.948026" elapsed="0.025276"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:35.974581" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:33.973450" elapsed="2.001396"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-09-25T19:48:31.463469" elapsed="4.511548"/>
+</iter>
+<var>${index}</var>
+<value>2</value>
+<status status="PASS" start="2024-09-25T19:48:25.151766" elapsed="10.823355"/>
+</for>
 <var name="${category}">Tietokoneet</var>
-<status status="PASS" start="2024-09-24T22:37:25.525808" elapsed="2.517802"/>
+<status status="PASS" start="2024-09-25T19:48:20.834185" elapsed="15.141044"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T22:37:28.043939" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Komponentit</msg>
+<msg time="2024-09-25T19:48:35.976677" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Komponentit</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T22:37:28.043793" elapsed="0.000163"/>
+<status status="PASS" start="2024-09-25T19:48:35.976182" elapsed="0.000549"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:28.044104" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Komponentit'</msg>
+<msg time="2024-09-25T19:48:35.977218" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Komponentit'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-24T22:37:28.044025" elapsed="0.235343"/>
+<status status="PASS" start="2024-09-25T19:48:35.976968" elapsed="0.381769"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-24T22:37:30.282280" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T19:48:38.361257" level="INFO">Slept 2 seconds.</msg>
 <arg>${SLEEP_TIME}</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-24T22:37:28.279594" elapsed="2.002789"/>
+<status status="PASS" start="2024-09-25T19:48:36.358886" elapsed="2.002911"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.product-list--items</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:48:38.362980" elapsed="0.023724"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:38.394066" level="INFO">${product_links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.ECB96356D04D91F04D8DBAA3135158E1.e.253")&gt;, &lt;selenium.webdri...</msg>
+<var>${product_links}</var>
+<arg>${PRODUCT_LINK_SELECTOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:48:38.386943" elapsed="0.007164"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:48:38.394665" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.ECB96356D04D91F04D8DBAA3135158E1.e.253")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:48:38.394457" elapsed="0.000236"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:38.394967" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.ECB96356D04D91F04D8DBAA3135158E1.e.253")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:48:38.394801" elapsed="0.332483"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:40.729829" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:38.727437" elapsed="2.002971"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:30.293118" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
-<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
-<arg>msg=Add to cart button not found for ${category}.</arg>
+<msg time="2024-09-25T19:48:40.766176" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T22:37:30.282526" elapsed="0.010654"/>
+<status status="PASS" start="2024-09-25T19:48:40.731561" elapsed="0.034802"/>
 </kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:48:40.766671" elapsed="0.023496"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:42.791063" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:40.790316" elapsed="2.000900"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-09-25T19:48:38.394357" elapsed="4.396951"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:48:42.791875" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.ECB96356D04D91F04D8DBAA3135158E1.e.254")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:48:42.791634" elapsed="0.000267"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:42.792183" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.ECB96356D04D91F04D8DBAA3135158E1.e.254")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:48:42.792007" elapsed="0.247568"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:45.040984" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:43.039724" elapsed="2.001569"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:45.071063" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:48:45.041783" elapsed="0.029381"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:48:45.071342" elapsed="0.026573"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:47.101542" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:45.099314" elapsed="2.002490"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-09-25T19:48:42.791493" elapsed="4.310477"/>
+</iter>
+<var>${index}</var>
+<value>2</value>
+<status status="PASS" start="2024-09-25T19:48:38.394194" elapsed="8.707873"/>
+</for>
 <var name="${category}">Komponentit</var>
-<status status="PASS" start="2024-09-24T22:37:28.043713" elapsed="2.249516"/>
+<status status="PASS" start="2024-09-25T19:48:35.975889" elapsed="11.126266"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T22:37:30.293536" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Oheislaitteet</msg>
+<msg time="2024-09-25T19:48:47.103241" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Oheislaitteet</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T22:37:30.293403" elapsed="0.000149"/>
+<status status="PASS" start="2024-09-25T19:48:47.102782" elapsed="0.000506"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:30.293693" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Oheislaitteet'</msg>
+<msg time="2024-09-25T19:48:47.103686" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Oheislaitteet'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-24T22:37:30.293619" elapsed="0.823093"/>
+<status status="PASS" start="2024-09-25T19:48:47.103478" elapsed="0.264103"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-24T22:37:33.119002" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T19:48:49.369377" level="INFO">Slept 2 seconds.</msg>
 <arg>${SLEEP_TIME}</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-24T22:37:31.116856" elapsed="2.002238"/>
+<status status="PASS" start="2024-09-25T19:48:47.367802" elapsed="2.002192"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.product-list--items</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:48:49.370982" elapsed="0.018085"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:49.399037" level="INFO">${product_links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.C77BB9E28D0E7470D016C30B29FDC0D9.e.398")&gt;, &lt;selenium.webdri...</msg>
+<var>${product_links}</var>
+<arg>${PRODUCT_LINK_SELECTOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:48:49.390778" elapsed="0.008309"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:48:49.399824" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.C77BB9E28D0E7470D016C30B29FDC0D9.e.398")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:48:49.399572" elapsed="0.000282"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:49.400156" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.C77BB9E28D0E7470D016C30B29FDC0D9.e.398")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:48:49.399966" elapsed="0.383237"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:51.786807" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:49.783349" elapsed="2.004056"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:33.129332" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
-<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
-<arg>msg=Add to cart button not found for ${category}.</arg>
+<msg time="2024-09-25T19:48:51.821768" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T22:37:33.119236" elapsed="0.010160"/>
+<status status="PASS" start="2024-09-25T19:48:51.788493" elapsed="0.033453"/>
 </kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:48:51.822307" elapsed="0.023806"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:53.848763" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:51.846272" elapsed="2.003861"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-09-25T19:48:49.399438" elapsed="4.451046"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:48:53.853441" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.C77BB9E28D0E7470D016C30B29FDC0D9.e.399")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:48:53.852636" elapsed="0.000868"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:53.854276" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.C77BB9E28D0E7470D016C30B29FDC0D9.e.399")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:48:53.853763" elapsed="0.283671"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:56.139043" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:54.137602" elapsed="2.001654"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:48:56.156741" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:48:56.139615" elapsed="0.017200"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:48:56.156950" elapsed="0.008240"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:48:58.165957" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:48:56.165393" elapsed="2.000841"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-09-25T19:48:53.852043" elapsed="4.314368"/>
+</iter>
+<var>${index}</var>
+<value>2</value>
+<status status="PASS" start="2024-09-25T19:48:49.399213" elapsed="8.767309"/>
+</for>
 <var name="${category}">Oheislaitteet</var>
-<status status="PASS" start="2024-09-24T22:37:30.293330" elapsed="2.836117"/>
+<status status="PASS" start="2024-09-25T19:48:47.102528" elapsed="11.064102"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T22:37:33.129752" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/SimRacing</msg>
+<msg time="2024-09-25T19:48:58.167819" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/SimRacing</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T22:37:33.129616" elapsed="0.000151"/>
+<status status="PASS" start="2024-09-25T19:48:58.167349" elapsed="0.000517"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:33.129908" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/SimRacing'</msg>
+<msg time="2024-09-25T19:48:58.168361" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/SimRacing'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-24T22:37:33.129832" elapsed="0.272699"/>
+<status status="PASS" start="2024-09-25T19:48:58.168078" elapsed="0.310602"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-24T22:37:35.403333" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T19:49:00.481722" level="INFO">Slept 2 seconds.</msg>
 <arg>${SLEEP_TIME}</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-24T22:37:33.402756" elapsed="2.000667"/>
+<status status="PASS" start="2024-09-25T19:48:58.478831" elapsed="2.003501"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.product-list--items</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:49:00.483086" elapsed="0.019636"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:00.511300" level="INFO">${product_links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.BD294EE19BEA2C4602A6A6B735C25F9C.e.514")&gt;, &lt;selenium.webdri...</msg>
+<var>${product_links}</var>
+<arg>${PRODUCT_LINK_SELECTOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:00.503013" elapsed="0.008339"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:49:00.512052" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.BD294EE19BEA2C4602A6A6B735C25F9C.e.514")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:49:00.511812" elapsed="0.000272"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:00.512485" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.BD294EE19BEA2C4602A6A6B735C25F9C.e.514")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:00.512198" elapsed="0.252098"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:02.767831" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:00.764508" elapsed="2.003823"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:35.412903" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
-<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
-<arg>msg=Add to cart button not found for ${category}.</arg>
+<msg time="2024-09-25T19:49:02.792329" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T22:37:35.403561" elapsed="0.009402"/>
+<status status="PASS" start="2024-09-25T19:49:02.768698" elapsed="0.023730"/>
 </kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:49:02.792617" elapsed="0.011259"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:04.804836" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:02.804045" elapsed="2.001722"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-09-25T19:49:00.511680" elapsed="4.294460"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:49:04.808424" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.BD294EE19BEA2C4602A6A6B735C25F9C.e.515")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:49:04.807697" elapsed="0.000785"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:04.809477" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.BD294EE19BEA2C4602A6A6B735C25F9C.e.515")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:04.808912" elapsed="0.253263"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:07.063797" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:05.062431" elapsed="2.002315"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:07.098831" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:49:07.065799" elapsed="0.033186"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:49:07.099268" elapsed="0.012184"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:09.113891" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:07.111613" elapsed="2.002401"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-09-25T19:49:04.807225" elapsed="4.306866"/>
+</iter>
+<var>${index}</var>
+<value>2</value>
+<status status="PASS" start="2024-09-25T19:49:00.511471" elapsed="8.602668"/>
+</for>
 <var name="${category}">SimRacing</var>
-<status status="PASS" start="2024-09-24T22:37:33.129543" elapsed="2.283468"/>
+<status status="PASS" start="2024-09-25T19:48:58.167059" elapsed="10.947127"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T22:37:35.413381" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Verkkotuotteet</msg>
+<msg time="2024-09-25T19:49:09.114719" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Verkkotuotteet</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T22:37:35.413236" elapsed="0.000161"/>
+<status status="PASS" start="2024-09-25T19:49:09.114502" elapsed="0.000239"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:35.413538" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Verkkotuotteet'</msg>
+<msg time="2024-09-25T19:49:09.114955" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Verkkotuotteet'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-24T22:37:35.413463" elapsed="0.289389"/>
+<status status="PASS" start="2024-09-25T19:49:09.114840" elapsed="0.456212"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-24T22:37:37.703442" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T19:49:11.572305" level="INFO">Slept 2 seconds.</msg>
 <arg>${SLEEP_TIME}</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-24T22:37:35.703018" elapsed="2.000517"/>
+<status status="PASS" start="2024-09-25T19:49:09.571191" elapsed="2.001759"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.product-list--items</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:49:11.574178" elapsed="0.018605"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:11.601080" level="INFO">${product_links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.7FD362FB1755B6B5A0E791165F11D446.e.621")&gt;, &lt;selenium.webdri...</msg>
+<var>${product_links}</var>
+<arg>${PRODUCT_LINK_SELECTOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:11.593087" elapsed="0.008042"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:49:11.601860" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.7FD362FB1755B6B5A0E791165F11D446.e.621")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:49:11.601620" elapsed="0.000269"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:11.602189" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.7FD362FB1755B6B5A0E791165F11D446.e.621")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:11.602003" elapsed="0.291961"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:13.895856" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:11.894111" elapsed="2.002321"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:37.712892" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
-<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
-<arg>msg=Add to cart button not found for ${category}.</arg>
+<msg time="2024-09-25T19:49:13.931863" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T22:37:37.703683" elapsed="0.009277"/>
+<status status="PASS" start="2024-09-25T19:49:13.897985" elapsed="0.034049"/>
 </kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:49:13.933130" elapsed="0.013004"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:15.947089" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:13.946317" elapsed="2.001048"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-09-25T19:49:11.601478" elapsed="4.346041"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:49:15.948438" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.7FD362FB1755B6B5A0E791165F11D446.e.622")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:49:15.948057" elapsed="0.000419"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:15.948946" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.7FD362FB1755B6B5A0E791165F11D446.e.622")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:15.948643" elapsed="0.250113"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:18.199464" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:16.198898" elapsed="2.000675"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:18.219765" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:49:18.199750" elapsed="0.020091"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:49:18.219980" elapsed="0.008034"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:20.229758" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:18.228162" elapsed="2.001810"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-09-25T19:49:15.947826" elapsed="4.282285"/>
+</iter>
+<var>${index}</var>
+<value>2</value>
+<status status="PASS" start="2024-09-25T19:49:11.601243" elapsed="8.628941"/>
+</for>
 <var name="${category}">Verkkotuotteet</var>
-<status status="PASS" start="2024-09-24T22:37:35.413162" elapsed="2.299853"/>
+<status status="PASS" start="2024-09-25T19:49:09.114379" elapsed="11.115868"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T22:37:37.713335" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tarvikkeet</msg>
+<msg time="2024-09-25T19:49:20.231030" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Tarvikkeet</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T22:37:37.713192" elapsed="0.000159"/>
+<status status="PASS" start="2024-09-25T19:49:20.230728" elapsed="0.000331"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:37.713504" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tarvikkeet'</msg>
+<msg time="2024-09-25T19:49:20.231333" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Tarvikkeet'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-24T22:37:37.713428" elapsed="0.325266"/>
+<status status="PASS" start="2024-09-25T19:49:20.231186" elapsed="0.611054"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-24T22:37:40.040180" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T19:49:22.843011" level="INFO">Slept 2 seconds.</msg>
 <arg>${SLEEP_TIME}</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-24T22:37:38.038845" elapsed="2.001438"/>
+<status status="PASS" start="2024-09-25T19:49:20.842392" elapsed="2.000831"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.product-list--items</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:49:22.843538" elapsed="0.009886"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:22.858210" level="INFO">${product_links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.F779E95321C258530C13A2A01BE85B58.e.759")&gt;, &lt;selenium.webdri...</msg>
+<var>${product_links}</var>
+<arg>${PRODUCT_LINK_SELECTOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:22.853559" elapsed="0.004683"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:49:22.858666" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.F779E95321C258530C13A2A01BE85B58.e.759")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:49:22.858518" elapsed="0.000168"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:22.858918" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.F779E95321C258530C13A2A01BE85B58.e.759")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:22.858766" elapsed="0.326521"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:25.188110" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:23.185425" elapsed="2.002772"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:40.050567" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
-<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
-<arg>msg=Add to cart button not found for ${category}.</arg>
+<msg time="2024-09-25T19:49:25.206071" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T22:37:40.040425" elapsed="0.010200"/>
+<status status="PASS" start="2024-09-25T19:49:25.188335" elapsed="0.017812"/>
 </kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:49:25.206288" elapsed="0.017698"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:27.224766" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:25.224139" elapsed="2.000729"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-09-25T19:49:22.858439" elapsed="4.366486"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:49:27.225312" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.F779E95321C258530C13A2A01BE85B58.e.760")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:49:27.225144" elapsed="0.000188"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:27.225797" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.F779E95321C258530C13A2A01BE85B58.e.760")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:27.225408" elapsed="0.318974"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:29.548246" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:27.544523" elapsed="2.004258"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:29.567560" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:49:29.549604" elapsed="0.018026"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:49:29.567758" elapsed="0.019814"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:31.590453" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:29.587723" elapsed="2.003328"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-09-25T19:49:27.225054" elapsed="4.366355"/>
+</iter>
+<var>${index}</var>
+<value>2</value>
+<status status="PASS" start="2024-09-25T19:49:22.858310" elapsed="8.733279"/>
+</for>
 <var name="${category}">Tarvikkeet</var>
-<status status="PASS" start="2024-09-24T22:37:37.713114" elapsed="2.337559"/>
+<status status="PASS" start="2024-09-25T19:49:20.230527" elapsed="11.361279"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T22:37:40.050979" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Erikoistuotteet</msg>
+<msg time="2024-09-25T19:49:31.594399" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Erikoistuotteet</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T22:37:40.050845" elapsed="0.000149"/>
+<status status="PASS" start="2024-09-25T19:49:31.593208" elapsed="0.001264"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:40.051134" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Erikoistuotteet'</msg>
+<msg time="2024-09-25T19:49:31.595069" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Erikoistuotteet'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-24T22:37:40.051060" elapsed="0.364681"/>
+<status status="PASS" start="2024-09-25T19:49:31.594772" elapsed="0.357438"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-24T22:37:42.418348" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T19:49:33.954351" level="INFO">Slept 2 seconds.</msg>
 <arg>${SLEEP_TIME}</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-24T22:37:40.415885" elapsed="2.002557"/>
+<status status="PASS" start="2024-09-25T19:49:31.952357" elapsed="2.002632"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.product-list--items</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:49:33.956256" elapsed="0.018981"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:33.984107" level="INFO">${product_links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.A4AA0C14AD47866AF8C563A64BE2D9A1.e.910")&gt;, &lt;selenium.webdri...</msg>
+<var>${product_links}</var>
+<arg>${PRODUCT_LINK_SELECTOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:33.975556" elapsed="0.008601"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:49:33.984876" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.A4AA0C14AD47866AF8C563A64BE2D9A1.e.910")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:49:33.984648" elapsed="0.000256"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:33.985202" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.A4AA0C14AD47866AF8C563A64BE2D9A1.e.910")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:33.985015" elapsed="0.338490"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:36.326456" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:34.323678" elapsed="2.003066"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:42.427431" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
-<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
-<arg>msg=Add to cart button not found for ${category}.</arg>
+<msg time="2024-09-25T19:49:36.361092" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T22:37:42.418588" elapsed="0.008929"/>
+<status status="PASS" start="2024-09-25T19:49:36.327213" elapsed="0.034041"/>
 </kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:49:36.361531" elapsed="0.020779"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:38.384973" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:36.383349" elapsed="2.001836"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-09-25T19:49:33.984510" elapsed="4.400797"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:49:38.386014" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.A4AA0C14AD47866AF8C563A64BE2D9A1.e.911")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:49:38.385731" elapsed="0.000307"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:38.386342" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.A4AA0C14AD47866AF8C563A64BE2D9A1.e.911")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:38.386142" elapsed="0.206814"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:40.594768" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:38.593113" elapsed="2.002566"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:40.632586" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:49:40.596953" elapsed="0.035799"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:49:40.633566" elapsed="0.024758"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:42.659913" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:40.658488" elapsed="2.002022"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-09-25T19:49:38.385547" elapsed="4.275388"/>
+</iter>
+<var>${index}</var>
+<value>2</value>
+<status status="PASS" start="2024-09-25T19:49:33.984278" elapsed="8.676825"/>
+</for>
 <var name="${category}">Erikoistuotteet</var>
-<status status="PASS" start="2024-09-24T22:37:40.050773" elapsed="2.376806"/>
+<status status="PASS" start="2024-09-25T19:49:31.592551" elapsed="11.068714"/>
 </iter>
 <iter>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T22:37:42.427919" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Ohjelmistot</msg>
+<msg time="2024-09-25T19:49:42.663797" level="INFO">${category_url} = https://www.jimms.fi/fi/Product/Ohjelmistot</msg>
 <var>${category_url}</var>
 <arg>${BASE_URL}${category}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T22:37:42.427770" elapsed="0.000165"/>
+<status status="PASS" start="2024-09-25T19:49:42.662549" elapsed="0.001351"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:42.428165" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Ohjelmistot'</msg>
+<msg time="2024-09-25T19:49:42.664592" level="INFO">Opening url 'https://www.jimms.fi/fi/Product/Ohjelmistot'</msg>
 <arg>${category_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-24T22:37:42.428006" elapsed="0.376142"/>
+<status status="PASS" start="2024-09-25T19:49:42.664243" elapsed="0.457124"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-09-24T22:37:44.804700" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-25T19:49:45.123702" level="INFO">Slept 2 seconds.</msg>
 <arg>${SLEEP_TIME}</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-09-24T22:37:42.804307" elapsed="2.000495"/>
+<status status="PASS" start="2024-09-25T19:49:43.121645" elapsed="2.002333"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:.product-list--items</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:49:45.124424" elapsed="0.019195"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:45.151414" level="INFO">${product_links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.B0AB1D3F1F81C71AC1937BC453A775CF.e.1042")&gt;, &lt;selenium.webdr...</msg>
+<var>${product_links}</var>
+<arg>${PRODUCT_LINK_SELECTOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:45.143895" elapsed="0.007565"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:49:45.152083" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.B0AB1D3F1F81C71AC1937BC453A775CF.e.1042")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:49:45.151869" elapsed="0.000242"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:45.152389" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.B0AB1D3F1F81C71AC1937BC453A775CF.e.1042")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:45.152221" elapsed="0.285007"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:47.439119" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:45.437445" elapsed="2.003004"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-24T22:37:44.814533" level="INFO">Element 'xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a' is displayed.</msg>
-<arg>xpath=//*[@id="jim-main"]/div[2]/div/div[2]/div[4]/div/div[1]/product-box/div[2]/div[3]/addto-cart-wrapper/div/a</arg>
-<arg>msg=Add to cart button not found for ${category}.</arg>
+<msg time="2024-09-25T19:49:47.475958" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T22:37:44.804954" elapsed="0.009645"/>
+<status status="PASS" start="2024-09-25T19:49:47.442517" elapsed="0.033607"/>
 </kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:49:47.476430" elapsed="0.013453"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:49.491262" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:47.490095" elapsed="2.001810"/>
+</kw>
+<var name="${index}">0</var>
+<status status="PASS" start="2024-09-25T19:49:45.151754" elapsed="4.340530"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-25T19:49:49.493965" level="INFO">${product_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.B0AB1D3F1F81C71AC1937BC453A775CF.e.1043")&gt;</msg>
+<var>${product_link}</var>
+<arg>${product_links}[${index}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-25T19:49:49.493425" elapsed="0.000601"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:49.494646" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="85c98869dd8420cb1a28997032c572b5", element="f.00C684D801B0AC713DCA897E02286F85.d.B0AB1D3F1F81C71AC1937BC453A775CF.e.1043")&gt;'.</msg>
+<arg>${product_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-25T19:49:49.494273" elapsed="0.290618"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:51.785942" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:49.785033" elapsed="2.001636"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-25T19:49:51.821287" level="INFO">Element 'xpath=//*[contains(normalize-space(.), 'Lisää koriin')]' is displayed.</msg>
+<arg>xpath=//*[contains(normalize-space(.), 'Lisää koriin')]</arg>
+<arg>msg=Add to cart button not found by text for product index ${index} in category ${category}.</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-25T19:49:51.787830" elapsed="0.033623"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-09-25T19:49:51.821752" elapsed="0.013865"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-25T19:49:53.837547" level="INFO">Slept 2 seconds.</msg>
+<arg>${SLEEP_TIME}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-25T19:49:51.835776" elapsed="2.002051"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-09-25T19:49:49.493066" elapsed="4.344936"/>
+</iter>
+<var>${index}</var>
+<value>2</value>
+<status status="PASS" start="2024-09-25T19:49:45.151564" elapsed="8.686544"/>
+</for>
 <var name="${category}">Ohjelmistot</var>
-<status status="PASS" start="2024-09-24T22:37:42.427688" elapsed="2.386962"/>
+<status status="PASS" start="2024-09-25T19:49:42.662018" elapsed="11.176195"/>
 </iter>
 <var>${category}</var>
 <value>@{CATEGORIES}</value>
-<status status="PASS" start="2024-09-24T22:37:25.525536" elapsed="19.289150"/>
+<status status="PASS" start="2024-09-25T19:48:20.833828" elapsed="93.004454"/>
 </for>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-24T22:37:44.814841" elapsed="0.134402"/>
+<status status="PASS" start="2024-09-25T19:49:53.838733" elapsed="0.177686"/>
 </kw>
-<doc>This test case verifies that all product categories return a valid landing page and contain the addto-cart-wrapper.</doc>
-<status status="PASS" start="2024-09-24T22:37:20.381202" elapsed="24.568250"/>
+<doc>This test case verifies that selected products contain an "Add to Cart" button.</doc>
+<status status="PASS" start="2024-09-25T19:48:07.933016" elapsed="106.083644"/>
 </test>
-<status status="PASS" start="2024-09-24T22:37:13.494762" elapsed="31.454970"/>
+<status status="PASS" start="2024-09-25T19:48:07.774430" elapsed="106.242567"/>
 </suite>
 <statistics>
 <total>
